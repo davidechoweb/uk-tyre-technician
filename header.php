@@ -25,6 +25,8 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
+	<?php if ( !is_page('landing-page') ) : ?>
+
 	<!-- ******************* The Navbar Area ******************* -->
 	<header id="wrapper-navbar">
 
@@ -35,3 +37,5 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 		<?php get_template_part( 'global-templates/navbar', $navbar_type ); ?>
 
 	</header><!-- #wrapper-navbar -->
+
+	<?php endif; ?>

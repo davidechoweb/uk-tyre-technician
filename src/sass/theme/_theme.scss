@@ -4,29 +4,448 @@
 /*                                    */
 /**************************************/
 
+@use "sass:math";
+// function for fluid typography
+@function strip-unit($value) {
+@return math.div($value, ($value * 0 + 1));
+}
+
+/* open-sans-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/open-sans-v43-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-300italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: url('../fonts/open-sans-v43-latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/open-sans-v43-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/open-sans-v43-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/open-sans-v43-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-500italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../fonts/open-sans-v43-latin-500italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/open-sans-v43-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-600italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: url('../fonts/open-sans-v43-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/open-sans-v43-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-700italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../fonts/open-sans-v43-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/open-sans-v43-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-800italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: url('../fonts/open-sans-v43-latin-800italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+$open-sans: 'Open Sans', 'sans-serif';
+
+/* kanit-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/kanit-v16-latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-100italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 100;
+  src: url('../fonts/kanit-v16-latin-100italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-200 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/kanit-v16-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-200italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 200;
+  src: url('../fonts/kanit-v16-latin-200italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/kanit-v16-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-300italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 300;
+  src: url('../fonts/kanit-v16-latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/kanit-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/kanit-v16-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/kanit-v16-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-500italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../fonts/kanit-v16-latin-500italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/kanit-v16-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-600italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 600;
+  src: url('../fonts/kanit-v16-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/kanit-v16-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-700italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../fonts/kanit-v16-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/kanit-v16-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-800italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 800;
+  src: url('../fonts/kanit-v16-latin-800italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/kanit-v16-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* kanit-900italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: italic;
+  font-weight: 900;
+  src: url('../fonts/kanit-v16-latin-900italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+$kanit: 'Kanit', 'sans-serif';
+
+$min_width: 480px;
+$max_width: 1920px;
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
+			}
+		}
+	}
+}
+
+body {
+	font-family: $open-sans;
+	color: $copy-color;
+	font-weight: 300;
+	word-break: break-word;
+	@include fluid-type($min_width, $max_width, 14px, 16px);
+
+	@media screen and (max-width:1440px) {
+		@include fluid-type($min_width, $max_width, 14px, 14px);
+	}
+}
+
+h1, .h1 {
+	font-family: $kanit;
+	font-weight: 700;
+	color: inherit;
+	@include fluid-type($min_width, $max_width, 32px, 48px);
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+h2, .h2 {
+	font-family: $kanit;
+	font-weight: 700;
+	color: inherit;
+	@include fluid-type($min_width, $max_width, 32px, 48px);
+	font-style: italic;
+	text-transform: uppercase;
+}
+  
+h3, .h3 {
+	font-family: $kanit;
+	color: inherit;
+	@include fluid-type($min_width, $max_width, 28px, 36px);
+	font-style: italic;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+h4, .h4 {
+	font-family: $kanit;
+	font-size: 22px;
+	color: inherit;
+	@include fluid-type($min_width, $max_width, 22px, 28px);
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+h5, .h5 {
+	font-family: $kanit;
+	font-weight: 300;
+	font-size: 18px;
+	color: inherit;
+	@include fluid-type($min_width, $max_width, 18px, 22px);
+	font-style: italic;
+	text-transform: uppercase;
+}
+
 /**************************************/
 /* !- Register Font Face              */
 /**************************************/
 
+// @font-face {
+//   font-family: 'icomoon';
+//   src:  url('../fonts/icomoon.eot?v1hlgj');
+//   src:  url('../fonts/icomoon.eot?v1hlgj#iefix') format('embedded-opentype'),
+// 	url('../fonts/icomoon.ttf?v1hlgj') format('truetype'),
+// 	url('../fonts/icomoon.woff?v1hlgj') format('woff'),
+// 	url('../fonts/icomoon.svg?v1hlgj#icomoon') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: block;
+// }
+
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?v1hlgj');
-  src:  url('../fonts/icomoon.eot?v1hlgj#iefix') format('embedded-opentype'),
-	url('../fonts/icomoon.ttf?v1hlgj') format('truetype'),
-	url('../fonts/icomoon.woff?v1hlgj') format('woff'),
-	url('../fonts/icomoon.svg?v1hlgj#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?r2ordr');
+  src:  url('../fonts/icomoon.eot?r2ordr#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?r2ordr') format('truetype'),
+    url('../fonts/icomoon.woff?r2ordr') format('woff'),
+    url('../fonts/icomoon.svg?r2ordr#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
+
 /**************************************/
 /* !- Icon Font                       */
 /**************************************/
 
-%font-icon,
-[class^="icon-"],
-[class*=" icon-"] {
+// %font-icon,
+// [class^="icon-"],
+// [class*=" icon-"] {
+//   /* use !important to prevent issues with browser extensions that change fonts */
+//   font-family: 'icomoon' !important;
+//   speak: never;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-variant: normal;
+//   text-transform: none;
+//   line-height: 1;
+
+//   /* Better Font Rendering =========== */
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// /* !-- Social Media Icons */
+// .icon-tiktok::before {
+//   content: '\e900';
+// }
+// .icon-x::before {
+//   content: '\e901';
+// }
+// .icon-facebook-square::before {
+//   content: '\e902';
+// }
+// .icon-facebook::before {
+//   content: '\ea90';
+// }
+// .icon-instagram::before {
+//   content: '\ea92';
+// }
+// .icon-youtube::before {
+//   content: '\ea9d';
+// }
+// .icon-linkedin-square::before {
+//   content: '\eac9';
+// }
+// .icon-linkedin::before {
+//   content: '\eaca';
+// }
+// .icon-pinterest::before {
+//   content: '\ead1';
+// }
+
+// /* !-- Credit Card Icons */
+// .icon-cc-visa::before {
+//   content: '\f1f0';
+// }
+// .icon-cc-mastercard::before {
+//   content: '\f1f1';
+// }
+// .icon-cc-discover::before {
+//   content: '\f1f2';
+// }
+// .icon-cc-amex::before {
+//   content: '\f1f3';
+// }
+// .icon-cc-paypal::before {
+//   content: '\f1f4';
+// }
+// .icon-cc-stripe::before {
+//   content: '\f1f5';
+// }
+// .icon-apple-pay::before {
+//   content: '\e903';
+// }
+// .icon-google-pay::before {
+//   content: '\e904';
+// }
+
+// /* !-- Other Icons */
+// .icon-share::before {
+//   content: '\ea82';
+// }
+
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
@@ -41,67 +460,238 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* !-- Social Media Icons */
-.icon-tiktok::before {
-  content: '\e900';
+.icon-24-7:before {
+  content: "\e900";
 }
-.icon-x::before {
-  content: '\e901';
+.icon-agricultural:before {
+  content: "\e901";
 }
-.icon-facebook-square::before {
-  content: '\e902';
+.icon-basket:before {
+  content: "\e902";
 }
-.icon-facebook::before {
-  content: '\ea90';
+.icon-car:before {
+  content: "\e903";
 }
-.icon-instagram::before {
-  content: '\ea92';
+.icon-circle:before {
+  content: "\e904";
 }
-.icon-youtube::before {
-  content: '\ea9d';
+.icon-cross:before {
+  content: "\e905";
 }
-.icon-linkedin-square::before {
-  content: '\eac9';
+.icon-delivery-truck:before {
+  content: "\e906";
 }
-.icon-linkedin::before {
-  content: '\eaca';
+.icon-facebook:before {
+  content: "\e907";
 }
-.icon-pinterest::before {
-  content: '\ead1';
+.icon-image:before {
+  content: "\e908";
+}
+.icon-industrial:before {
+  content: "\e909";
+}
+.icon-instagram:before {
+  content: "\e90a";
+}
+.icon-login:before {
+  content: "\e90b";
+}
+.icon-mail:before {
+  content: "\e90c";
+}
+.icon-minus:before {
+  content: "\e90d";
+}
+.icon-phone:before {
+  content: "\e90e";
+}
+.icon-plus:before {
+  content: "\e90f";
+}
+.icon-search:before {
+  content: "\e910";
+}
+.icon-square-bg:before {
+  content: "\e911";
+}
+.icon-star:before {
+  content: "\e912";
+}
+.icon-tick:before {
+  content: "\e913";
+}
+.icon-x:before {
+  content: "\e914";
 }
 
-/* !-- Credit Card Icons */
-.icon-cc-visa::before {
-  content: '\f1f0';
-}
-.icon-cc-mastercard::before {
-  content: '\f1f1';
-}
-.icon-cc-discover::before {
-  content: '\f1f2';
-}
-.icon-cc-amex::before {
-  content: '\f1f3';
-}
-.icon-cc-paypal::before {
-  content: '\f1f4';
-}
-.icon-cc-stripe::before {
-  content: '\f1f5';
-}
-.icon-apple-pay::before {
-  content: '\e903';
-}
-.icon-google-pay::before {
-  content: '\e904';
-}
-
-/* !-- Other Icons */
-.icon-share::before {
-  content: '\ea82';
-}
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
+/**************************************/
+/*                                    */
+/* !Buttons                           */
+/*                                    */
+/**************************************/
+.echo-button {
+	color: white;
+	font-size: 18px;
+	font-family: $kanit;
+	font-weight: 500;
+	font-style: italic;
+	border-radius: 50px;
+	text-decoration: none;
+	padding: 5px 50px;
+	min-height: 40px;
+	transition: all 0.3s;
+	border: 1px solid;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+
+	&--blue {
+		@extend .echo-button;
+		background-color: $blue;
+		border-color: $blue;
+
+		&:hover {
+			background-color: white;
+			color: $blue;
+		}
+	}
+
+	&--red {
+		@extend .echo-button;
+		background-color: $red;
+		border-color: $red;
+
+		&:hover {
+			background-color: white;
+			color: $green;
+		}
+	}
+
+	&--green {
+		@extend .echo-button;
+		background-color: $green;
+		border-color: $green;
+
+		&:hover {
+			background-color: white;
+			color: $green;
+		}
+	}
+
+	&--white {
+		@extend .echo-button;
+		background-color: $white;
+		border-color: $white;
+		color: $blue;
+
+		&:hover {
+			background-color: $blue;
+			border-color: $blue;
+			color: $white;
+		}
+	}
+}
+
+/**************************************/
+/*                                    */
+/* !Landing Page                      */
+/*                                    */
+/**************************************/
+#landing-page {
+	.top-text {
+		background-color: black;
+
+		p {
+			font-family: $kanit;
+			color: white;
+			font-style: italic;
+			@include fluid-type($min_width, $max_width, 26px, 36px);
+			font-weight: 500;
+			padding: 11px 20px;
+		}
+	}
+
+	.landing-page-content {
+		height: calc(100vh - 91px);
+		min-height: 700px;
+		position: relative;
+
+		.row {
+			.col-12:nth-child(3) {
+				@media screen and (max-width:768px) {
+					order: 1;
+				}
+			}
+
+			.content-wrap {
+				position: relative;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				min-height: 250px;
+
+				.h3 {
+					display: table;
+					background-color: #fff;
+					margin-bottom: -20px;
+					padding: 29px 20px 28px;
+					box-shadow: 0px 3px 6px #00000029;
+					min-width: 300px;
+
+					@media screen and (min-width:960px) {
+						min-width: 430px;
+					}
+				}
+			}
+
+			.homepage {
+				background: url(../images/bg-tyre-casings.png) no-repeat center;
+				background-size: cover;
+
+				@media screen and (min-width:768px) {
+					background: none;
+					position: absolute;
+					z-index: 20;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+					-moz-transform: translateY(-50%);
+					-o-transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
+					left: 0;
+					right: 0;
+					margin: 15px auto 0;
+				}
+
+				.landing-page-logo {
+					height: 55px;
+				}
+			}
+		}
+	}
+}
+
+/**************************************/
+/*                                    */
+/* !Utilities                         */
+/*                                    */
+/**************************************/
+.echo-object-fit-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
 
 /**************************************/
 /*                                    */
