@@ -1,0 +1,85 @@
+
+// Basic Fade
+
+$easeOutCubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+.ani-text,
+.ani-fade,
+.ani-fade--up,
+.ani-fade--down,
+.ews-animate {
+    opacity: 0;
+}
+
+.ani-fade {
+    animation: ani-fade 0.3s $easeOutCubic both;
+}
+
+.ani-fade--up {
+    transform: translateY(20px);
+    animation: ani-fade-up 0.3s $easeOutCubic both;
+}
+
+.ani-fade--down {
+    transform: translateY(-20px);
+    animation: ani-fade-down 0.3s $easeOutCubic both;
+}
+
+.ani-text {
+    letter-spacing: -20px;
+    animation: ani-text-in 0.3s $easeOutCubic both;
+}
+
+
+.no-js {
+    .ani-text,
+    .ani-fade,
+    .ani-fade--up,
+    .ani-fade--down,
+    .ews-animate {
+        opacity: 1;
+        animation: none;
+    }
+}
+
+@keyframes ani-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ani-fade-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes ani-fade-down {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes ani-text-in {
+    0% {
+        letter-spacing: -2px;
+        opacity: 0;
+    }
+    100% {
+        letter-spacing: normal;
+        opacity: 1;
+    }
+}
