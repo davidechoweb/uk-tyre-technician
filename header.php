@@ -11,6 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -28,13 +29,14 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 	<?php if ( !is_page('landing-page') ) : ?>
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<header id="wrapper-navbar">
+	<header id="header">
 
 		<a class="skip-link <?php echo understrap_get_screen_reader_class( true ); ?>" href="#content">
 			<?php esc_html_e( 'Skip to content', 'understrap' ); ?>
 		</a>
 
 		<?php get_template_part( 'global-templates/navbar', $navbar_type ); ?>
+		<?php get_template_part( 'global-templates/navbar-offcanvas' ); ?>
 
 	</header><!-- #wrapper-navbar -->
 

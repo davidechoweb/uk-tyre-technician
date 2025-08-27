@@ -51,5 +51,4 @@ dist/
 dist-product/
 **/img
 /package-lock.json
-/package.json
 /src/build/browser-sync.config.js
