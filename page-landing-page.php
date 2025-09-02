@@ -34,6 +34,7 @@ $theme_options = get_fields('option');
                     <div class="homepage col-12 col-md-6">
                         <div class="position-relative h-100">
                             <div class="content-wrap flex-fill">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/uk-tyre.png" alt="Tyre" class="tyre-deco">
                                 <div class="box">
                                     <h3 class="h3"><img class="landing-page-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/uk-tyre-logo.png" alt=""></h3>
                                     <a href="<?php echo home_url(); ?>" class="echo-button--blue">Homepage</a>
@@ -51,6 +52,7 @@ $theme_options = get_fields('option');
                                     ]);
                                 ?>
                                 <div class="content-wrap flex-fill">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/images/uk-tyre.png" alt="Tyre" class="tyre-deco">
                                     <div class="box">
                                         <h3 class="h3"><?php echo $page['page']['title']; ?></h3>
                                         <a href="<?php echo $page['page']['url']; ?>" class="echo-button--blue">View</a>

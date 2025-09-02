@@ -45,6 +45,10 @@ if ( ! function_exists( 'echo_setup' ) ) {
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Menu', 'understrap' ),
+				'footer_1' => __( 'Footer 1', 'understrap' ),
+				'footer_2' => __( 'Footer 2', 'understrap' ),
+				'footer_3' => __( 'Footer 3', 'understrap' ),
+				'footer_4' => __( 'Footer 4', 'understrap' ),
 			)
 		);
 

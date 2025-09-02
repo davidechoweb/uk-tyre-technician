@@ -546,6 +546,7 @@ h5, .h5 {
 	position: relative;
 	display: inline-block;
 	text-align: center;
+	text-transform: uppercase;
 
 	&--blue {
 		@extend .echo-button;
@@ -584,7 +585,7 @@ h5, .h5 {
 		@extend .echo-button;
 		background-color: $white;
 		border-color: $white;
-		color: $blue;
+		color: $copy-color;
 
 		&:hover {
 			background-color: $blue;
@@ -625,6 +626,8 @@ h5, .h5 {
 				}
 			}
 
+			
+
 			.content-wrap {
 				position: relative;
 				text-align: center;
@@ -634,16 +637,82 @@ h5, .h5 {
 				height: 100%;
 				min-height: 250px;
 
-				.h3 {
-					display: table;
-					background-color: #fff;
-					margin-bottom: -20px;
-					padding: 29px 20px 28px;
-					box-shadow: 0px 3px 6px #00000029;
-					min-width: 300px;
+				.tyre-deco {
+					position: absolute;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
+					max-width: 220px;
 
-					@media screen and (min-width:960px) {
-						min-width: 430px;
+					@include media-breakpoint-up(md) {
+						max-width: 300px;
+					}
+
+					@include media-breakpoint-up(xxl) {
+						max-width: 370px;
+					}
+				}
+
+				.box {
+					position: relative;
+					z-index: 1;
+
+					.h3 {
+						display: table;
+						background-color: #fff;
+						margin-bottom: -10px;
+						padding: 15px 20px 14px;
+						box-shadow: 0px 3px 6px #00000029;
+						min-width: 300px;
+						position: relative;
+
+						@media screen and (min-width:960px) {
+							min-width: 430px;
+						}
+
+						@include media-breakpoint-up(xxl) {
+							padding: 26px 20px 25px;
+							margin-bottom: -20px;
+						}
+
+						&::before {
+							content: '';
+							position: absolute;
+							background-image: url(../images/ribbon-left.png);
+							background-position: center;
+							background-size: contain;
+							width: 50px;
+							height: 58px;
+							top: 15px;
+							left: -60px;
+
+							@include media-breakpoint-up(xxl) {
+								width: 68px;
+								height: 80px;
+								top: 25px;
+								left: -75px;
+							}
+						}
+
+						&::after {
+							content: '';
+							position: absolute;
+							background-image: url(../images/ribbon-right.png);
+							background-position: center;
+							background-size: contain;
+							width: 50px;
+							height: 58px;
+							top: 15px;
+							right: -60px;
+
+							@include media-breakpoint-up(xxl) {
+								width: 68px;
+								height: 80px;
+								top: 25px;
+								right: -75px;
+							}
+						}
 					}
 				}
 			}
@@ -668,7 +737,23 @@ h5, .h5 {
 				}
 
 				.landing-page-logo {
-					height: 55px;
+					height: 45px;
+					
+					@include media-breakpoint-up(xxl) {
+						height: 55px;
+					}
+				}
+
+				.content-wrap {
+					.box {
+						.h3 {
+							padding: 8px 20px 14px;
+
+							@include media-breakpoint-up(xxl) {
+								padding: 15px 20px 26px;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -915,11 +1000,192 @@ h5, .h5 {
 	}
 }
 
+#footer {
+	background: url(../images/footer-bg.png) no-repeat top;
+	background-size: cover;
+	background-position: top;
+	padding: 140px 0 70px;
+
+	@media screen and (min-width:960px) {
+		padding: 215px 0 130px;
+	}
+
+	.menu-label {
+		margin-bottom: 30px;
+	}
+
+	.footer-links {
+		li {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+
+			a {
+				color: white;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.footer-bottom {
+		@media screen and (max-width:575px) {
+			.contact-column {
+				order: 0;
+			}
+
+			.col {
+				order: 1;
+			}
+		}
+
+		.social-links {
+			align-self: flex-end;
+			justify-content: space-evenly;
+			width: 100%;
+
+			@media screen and (max-width:575px) {
+				justify-content: flex-start;
+				margin: 20px 0 !important;
+			}
+
+			li {
+				margin: 0 20px;
+
+				@media screen and (max-width:575px) {
+					margin: 0 20px 0 0;
+				}
+
+				a {
+					color: white;
+					text-decoration: none;
+					@include fluid-type($min_width, $max_width, 26px, 32px);
+					transition: all 0.3s;
+
+					&:hover {
+						color: $blue;
+					}
+				}
+			}
+		}
+		
+		.newsletter-form {
+			.wpcf7 {
+				max-width: none;
+			}
+
+			input[type=email] {
+				background: none;
+				border-radius: 0;
+				border: 0;
+				border-bottom: 1px solid white;
+				padding: 15px 0;
+				max-width: 265px;
+				@include fluid-type($min_width, $max_width, 16px, 18px);
+
+				&::placeholder {
+					color: white;
+					opacity: 1; /* Firefox */
+				}
+
+				&::-ms-input-placeholder { /* Edge 12 -18 */
+					color: white;
+				}
+			}
+
+			button {
+				@extend .echo-button--white;
+				margin-top: 20px;
+
+				@media screen and (min-width:760px) {
+					margin-top: 0;
+					margin-left: 20px;
+					align-self: center;
+				}
+			}
+
+			@media screen and (max-width:760px) {
+				.d-flex {
+					display: block !important;
+				}
+			}
+		}
+
+		.copyright-section {
+			margin-top: 35px;
+			text-align: center;
+
+			@media screen and (min-width:575px) {
+				margin-top: 70px;
+				text-align: left;
+			}
+
+			.copyright {
+				@include fluid-type($min_width, $max_width, 14px, 14px);
+			}
+			
+			.bottom-links {
+				a {
+					color: white;
+					@include fluid-type($min_width, $max_width, 14px, 14px);
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				.divider {
+					color: white;
+					margin: 0 20px;
+				}
+			}
+		}
+	}
+
+	.contact-column {
+		min-width: 235px;
+	}
+}
+
+/**************************************/
+/* !- Utility                         */
+/**************************************/
+.echo-object-fit-cover {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    object-position: center;
+}
+
+.echo-object-fit-contain {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
+    object-position: center;
+}
+
 /**************************************/
 /*                                    */
 /* !Layouts                           */
 /*                                    */
 /**************************************/
+
+.container {
+	max-width: 1360px;
+	padding: 0 20px;
+}
 
 .container-fluid {
 	padding: 0 20px;

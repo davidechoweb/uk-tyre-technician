@@ -1,0 +1,16 @@
+.hero-banner {
+    padding: 90px 0;
+
+    .container {
+        position: relative;
+        z-index: 1;
+
+        .h5 {
+            font-weight: 600;
+        }
+    }
+
+    .bg-img {
+        object-position: bottom;
+    }
+}
