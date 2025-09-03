@@ -1,16 +1,18 @@
-.hero-banner {
-    padding: 90px 0;
+.echo-block {
+    .hero-banner {
+        padding: 90px 0;
 
-    .container {
-        position: relative;
-        z-index: 1;
+        .container {
+            position: relative;
+            z-index: 1;
 
-        .h5 {
-            font-weight: 600;
+            .h5 {
+                font-weight: 600;
+            }
         }
-    }
 
-    .bg-img {
-        object-position: bottom;
+        .bg-img {
+            object-position: bottom;
+        }
     }
 }

@@ -1,0 +1,47 @@
+.echo-block {
+    .brands {
+        .h5 {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: $blue;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+
+            span {
+                background-color: white;
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                padding: 0 50px;
+
+                @include media-breakpoint-up(md) {
+                    padding: 0 100px;
+                }
+            }
+        }
+
+        &-container {
+            max-width: 1800px;
+
+            .brands-slider {
+                .logo {
+                    img {
+                        height: 50px;
+                        width: auto;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

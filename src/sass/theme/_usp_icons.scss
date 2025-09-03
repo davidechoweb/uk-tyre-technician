@@ -1,0 +1,21 @@
+.echo-block {
+    .usp-icons {
+        .usps {
+            max-width: 700px;
+            margin: 0 auto;
+
+            .usp {
+                @media screen and (max-width:768px) {
+                    &:nth-last-child(2),
+                    &:last-child {
+                        margin-top: 1rem;
+                    }
+                }
+
+                .usp-label {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+}

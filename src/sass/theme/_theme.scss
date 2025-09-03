@@ -318,7 +318,6 @@ h3, .h3 {
 
 h4, .h4 {
 	font-family: $kanit;
-	font-size: 22px;
 	color: inherit;
 	@include fluid-type($min_width, $max_width, 22px, 28px);
 	font-style: italic;
@@ -328,11 +327,16 @@ h4, .h4 {
 h5, .h5 {
 	font-family: $kanit;
 	font-weight: 300;
-	font-size: 18px;
 	color: inherit;
 	@include fluid-type($min_width, $max_width, 18px, 22px);
 	font-style: italic;
 	text-transform: uppercase;
+}
+
+.lead-text {
+	font-family: $open-sans;
+	font-weight: 400;
+	@include fluid-type($min_width, $max_width, 18px, 22px);
 }
 
 /**************************************/
@@ -778,6 +782,14 @@ h5, .h5 {
     object-position: center;
 }
 
+.echo-block > div {
+	padding: 40px 0;
+
+	@include media-breakpoint-up(md) {
+		padding: 80px 0;
+	}
+}
+
 /**************************************/
 /*                                    */
 /* !Header                            */
@@ -1174,6 +1186,14 @@ h5, .h5 {
     box-sizing: border-box;
     object-fit: contain;
     object-position: center;
+}
+
+.text-blue {
+	color: $blue;
+
+	* {
+		color: $blue;	
+	}
 }
 
 /**************************************/

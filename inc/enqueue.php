@@ -18,6 +18,14 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		$theme_version     = $the_theme->get( 'Version' );
 		$suffix            = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
+		// tiny slider css
+		wp_register_style('tinyslidercss', get_template_directory_uri() . '/css/tiny-slider.css', array(), '1.0', 'all');
+		wp_enqueue_style('tinyslidercss'); // Enqueue it!
+
+		// tiny slider js
+		wp_register_script('tinysliderjs', get_template_directory_uri() . '/js/tiny-slider.js', array('jquery'), '1.0.0'); // Custom scripts
+		wp_enqueue_script('tinysliderjs'); // Enqueue it!
+
 		// Grab asset urls.
 		$theme_styles  = "/css/theme{$suffix}.css";
 		$theme_scripts = "/js/theme{$suffix}.js";
