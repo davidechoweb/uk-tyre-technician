@@ -1,0 +1,13 @@
+.accreditation-logo {
+    .container {
+        max-width: 800px;
+
+        .acc-logos {
+            .acc-logo-label {
+                color: #373737;
+                @include fluid-type($min_width, $max_width, 14px, 16px);
+                font-family: $kanit;
+            }
+        }
+    }
+}

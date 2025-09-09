@@ -13,10 +13,6 @@ $container = get_theme_mod( 'echo_container_type' );
 
 $theme_options = get_fields('option');
 
-// echo '<pre>';
-// var_dump( $theme_options );
-// echo '</pre>';
-
 ?>
 
 <nav id="main-nav" class="d-none d-xl-block" aria-labelledby="main-nav-label">

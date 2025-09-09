@@ -1,6 +1,5 @@
 .echo-block {
     .usp-block {
-        padding: 0;
         min-height: 400px;
         display: flex;
         align-items: center;
@@ -11,12 +10,35 @@
             z-index: 1;
 
             .usp-list {
-                display: flex;
+                display: block;
                 justify-content: space-between;
-                padding-left: 75px;
+                padding-left: 40px;
+                max-width: 650px;
+                margin: 0 auto;
+
+                @include media-breakpoint-up(xl) {
+                    max-width: none;
+                    padding-left: 75px;
+                    display: flex;
+                }
 
                 li {
                     position: relative;
+                    width: 100%;
+
+                    @include media-breakpoint-up(xl) {
+                        width: auto;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 30px;
+                    }
+                    
+                    @include media-breakpoint-up(xl) {
+                        &:not(:last-child) {
+                            margin-bottom: 0;
+                        }
+                    }
 
                     &:not(:last-child) {
                         margin-right: 40px;
@@ -29,9 +51,9 @@
                         z-index: 1;
                         @include fluid-type($min_width, $max_width, 26px, 36px);
                         color: white;
-                        width: 90px;
-                        height: 90px;
-                        line-height: 80px;
+                        width: 60px;
+                        height: 60px;
+                        line-height: 48px;
                         border-radius: 100px;
                         border: 7px solid white;
                         background-color: $blue;
@@ -40,14 +62,36 @@
                         -webkit-transform: translateY(-50%);
                         -ms-transform: translateY(-50%);
                         transform: translateY(-50%);
-                        left: -75px;
+                        left: -40px;
+
+                        @include media-breakpoint-up(sm) {
+                            width: 70px;
+                            height: 70px;
+                            line-height: 55px;
+                        }
+
+                        @include media-breakpoint-up(xl) {
+                            width: 90px;
+                            height: 90px;
+                            line-height: 80px;
+                            border-radius: 100px;
+                            left: -75px;
+                        }
                     }
 
                     span {
-                        padding: 20px 50px 20px 60px;
+                        padding: 20px 30px;
                         display: block;
                         background-color: $red;
                         clip-path: polygon(0 0, 100% 0%, 97% 100%, 0% 100%);
+
+                        @include media-breakpoint-up(xl) {
+                            padding: 20px 30px 20px 50px;
+                        }
+
+                        @include media-breakpoint-up(xl) {
+                            padding: 20px 50px 20px 60px;
+                        }
 
                         .h5 {
                             color: white;

@@ -8,7 +8,7 @@
 ?>
 <div class="usp-block position-relative">
     <div class="container">
-        <ul class="usp-list list-unstyled">
+        <ul class="usp-list list-unstyled mb-0">
             <?php foreach ( $args['usp'] as $usp ) : ?>
             <li><span><p class="h5 mb-0"><?php echo $usp['text']; ?></p></span></li>
             <?php endforeach; ?>

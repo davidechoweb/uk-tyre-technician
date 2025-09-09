@@ -644,7 +644,7 @@
    * Constants
    */
 
-  const VERSION = '5.3.5';
+  const VERSION = '5.3.8';
 
   /**
    * Class definition
@@ -670,6 +670,8 @@
         this[propertyName] = null;
       }
     }
+
+    // Private
     _queueCallback(callback, element, isAnimated = true) {
       executeAfterTransition(callback, element, isAnimated);
     }
@@ -1594,11 +1596,11 @@
       this._element.style[dimension] = '';
       this._queueCallback(complete, this._element, true);
     }
+
+    // Private
     _isShown(element = this._element) {
       return element.classList.contains(CLASS_NAME_SHOW$7);
     }
-
-    // Private
     _configAfterMerge(config) {
       config.toggle = Boolean(config.toggle); // Coerce string values
       config.parent = getElement(config.parent);
@@ -4612,7 +4614,6 @@
    *
    * Shout-out to Angular https://github.com/angular/angular/blob/15.2.8/packages/core/src/sanitization/url_sanitizer.ts#L38
    */
-  // eslint-disable-next-line unicorn/better-regex
   const SAFE_URL_PATTERN = /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:/?#]*(?:[/?#]|$))/i;
   const allowedAttribute = (attribute, allowedAttributeList) => {
     const attributeName = attribute.nodeName.toLowerCase();
@@ -5154,6 +5155,7 @@
         if (trigger === 'click') {
           EventHandler.on(this._element, this.constructor.eventName(EVENT_CLICK$1), this._config.selector, event => {
             const context = this._initializeOnDelegatedTarget(event);
+            context._activeTrigger[TRIGGER_CLICK] = !(context._isShown() && context._activeTrigger[TRIGGER_CLICK]);
             context.toggle();
           });
         } else if (trigger !== TRIGGER_MANUAL) {
@@ -6015,7 +6017,6 @@
     }
 
     // Private
-
     _maybeScheduleHide() {
       if (!this._config.autohide) {
         return;
@@ -6118,7 +6119,6 @@
     }
   })();
 
-
   document.addEventListener("DOMContentLoaded", function () {
     // Check if an element is in the viewport
     Element.prototype.isInViewport = function (offset) {
@@ -6155,6 +6155,186 @@
 
     // Trigger animations on document ready
     elementEntranceFade();
+  });
+
+  // Add your JS customizations here
+  jQuery(function ($) {
+    // radio
+    // Check for pre-checked radio buttons on page load
+    $('input[type="radio"]:checked').each(function () {
+      $(this).parent('label').addClass('checked-label');
+    });
+
+    // Update labels when radio buttons change
+    $('input[type="radio"]').change(function () {
+      $('input[name="' + $(this).attr('name') + '"]').parent('label').removeClass('checked-label');
+      $(this).parent('label').addClass('checked-label');
+    });
+
+    // checkbox
+    $(document).ready(function ($) {
+      $('input[type="checkbox"]').change(function () {
+        var label = jQuery(this).parent('label');
+        if ($(this).is(':checked')) {
+          label.addClass('checked-label');
+        } else {
+          label.removeClass('checked-label');
+        }
+      });
+    });
+    var Accordion = /*#__PURE__*/function () {
+      function Accordion(el) {
+        var _this = this;
+        // Store the <details> element
+        this.el = el;
+        // Store the <summary> element
+        this.summary = el.querySelector("summary");
+        // Store the <div class="content"> element
+        this.content = el.querySelector(".accordion");
+
+        // Store the animation object (so we can cancel it if needed)
+        this.animation = null;
+        // Store if the element is closing
+        this.isClosing = false;
+        // Store if the element is expanding
+        this.isExpanding = false;
+        // Detect user clicks on the summary element
+        this.summary.addEventListener("click", function (e) {
+          return _this.onClick(e);
+        });
+      }
+      var _proto = Accordion.prototype;
+      _proto.onClick = function onClick(e) {
+        // Stop default behaviour from the browser
+        e.preventDefault();
+        // Add an overflow on the <details> to avoid content overflowing
+        this.el.style.overflow = "hidden";
+        // Check if the element is being closed or is already closed
+        if (this.isClosing || !this.el.open) {
+          this.open();
+          // Check if the element is being openned or is already open
+        } else if (this.isExpanding || this.el.open) {
+          this.shrink();
+        }
+      };
+      _proto.shrink = function shrink() {
+        var _this2 = this;
+        // Set the element as "being closed"
+        this.isClosing = true;
+
+        // Store the current height of the element
+        var startHeight = this.el.offsetHeight + "px";
+        // Calculate the height of the summary
+        var endHeight = this.summary.offsetHeight + "px";
+
+        // If there is already an animation running
+        if (this.animation) {
+          // Cancel the current animation
+          this.animation.cancel();
+        }
+
+        // Start a WAAPI animation
+        this.animation = this.el.animate([
+        // Set the keyframes from the startHeight to endHeight
+        {
+          height: startHeight
+        }, {
+          height: endHeight
+        }], {
+          duration: 500,
+          // Increased duration for smoother transition
+          easing: "ease-in-out" // Ease-in-out for smoother animation
+        });
+
+        // When the animation is complete, call onAnimationFinish()
+        this.animation.onfinish = function () {
+          return _this2.onAnimationFinish(false);
+        };
+        // If the animation is cancelled, isClosing variable is set to false
+        this.animation.oncancel = function () {
+          return _this2.isClosing = false;
+        };
+      };
+      _proto.open = function open() {
+        var _this3 = this;
+        // Apply a fixed height on the element
+        this.el.style.height = this.el.offsetHeight + "px";
+        // Force the [open] attribute on the details element
+        this.el.open = true;
+        // Wait for the next frame to call the expand function
+        window.requestAnimationFrame(function () {
+          return _this3.expand();
+        });
+      };
+      _proto.expand = function expand() {
+        var _this4 = this;
+        // Set the element as "being expanding"
+        this.isExpanding = true;
+        // Get the current fixed height of the element
+        var startHeight = this.el.offsetHeight + "px";
+        // Calculate the open height of the element (summary height + content height)
+        var endHeight = this.summary.offsetHeight + this.content.offsetHeight + "px";
+
+        // If there is already an animation running
+        if (this.animation) {
+          // Cancel the current animation
+          this.animation.cancel();
+        }
+
+        // Start a WAAPI animation
+        this.animation = this.el.animate([
+        // Set the keyframes from the startHeight to endHeight
+        {
+          height: startHeight
+        }, {
+          height: endHeight
+        }], {
+          duration: 500,
+          // Increased duration for smoother transition
+          easing: "ease-in-out" // Ease-in-out for smoother animation
+        });
+        // When the animation is complete, call onAnimationFinish()
+        this.animation.onfinish = function () {
+          return _this4.onAnimationFinish(true);
+        };
+        // If the animation is cancelled, isExpanding variable is set to false
+        this.animation.oncancel = function () {
+          return _this4.isExpanding = false;
+        };
+      };
+      _proto.onAnimationFinish = function onAnimationFinish(open) {
+        // Set the open attribute based on the parameter
+        this.el.open = open;
+        // Clear the stored animation
+        this.animation = null;
+        // Reset isClosing & isExpanding
+        this.isClosing = false;
+        this.isExpanding = false;
+        // Remove the overflow hidden and the fixed height
+        this.el.style.height = this.el.style.overflow = "";
+      };
+      return Accordion;
+    }();
+    document.querySelectorAll("details").forEach(function (el) {
+      new Accordion(el);
+    });
+
+    // Click on .file-label → open the hidden file input
+    $('.file-upload .file-label').on('click', function (e) {
+      e.preventDefault();
+      $(this).siblings('.wpcf7-form-control-wrap').find('input[type="file"]').click();
+    });
+
+    // When a file is chosen → replace label text with filename + extension
+    $('.file-upload input[type="file"]').on('change', function () {
+      var label = $(this).closest('.file-upload').find('.file-label');
+      if (this.files.length) {
+        var fileName = this.files[0].name; // includes extension
+        label.text(fileName);
+      } else {
+        label.text('Send photo');
+      }
+    });
   });
 
   exports.Alert = Alert;

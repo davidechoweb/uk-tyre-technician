@@ -1,0 +1,90 @@
+.echo-block-contact_form {
+    border-top: 10px solid $blue;
+    border-bottom: 10px solid $blue;
+    padding: 10px 0;
+
+    .logo-24-7 {
+        @media screen and (max-width:576px) {
+            img {
+                width: 55px;
+            } 
+        }
+    }
+
+    .contact-form {
+        background-color: #f7f7f7;
+        padding-bottom: 0;
+
+        .wpcf7 {
+            max-width: none;
+
+            .wpcf7-submit {
+                min-height: 48px;
+            }
+        }
+    }
+
+    .contact-details {
+        background-color: $red;
+        margin-top: 40px;
+        padding: 15px 0;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 80px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            text-align: left;
+        }
+
+        * {
+            color: white;
+        }
+
+        .phone-wrap, .email-wrap {
+            position: relative;
+
+            @include media-breakpoint-up(lg) {
+                padding-left: 100px;
+            }
+
+            @include media-breakpoint-up(xl) {
+                padding-left: 117px;
+            }
+
+            img {
+                width: 60px;
+                display: none;
+
+                @include media-breakpoint-up(lg) {
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+
+                @include media-breakpoint-up(lg) {
+                    width: 80px;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    width: 97px;
+                }
+            }
+        }
+
+        .phone, .email {
+            @include fluid-type($min_width, $max_width, 20px, 26px);
+            font-weight: 600;
+            font-family: $kanit;
+
+            .label {
+                font-weight: 300;
+            }
+        }
+    }
+}

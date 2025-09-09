@@ -13176,6 +13176,339 @@ h5, .h5 {
 }
 
 /**************************************/
+/* !CF7, ACF & form fields            */
+/**************************************/
+input[type=text].echo-form-field,
+input[type=search].echo-form-field,
+input[type=password].echo-form-field,
+input[type=email].echo-form-field,
+input[type=tel].echo-form-field,
+input[type=number].echo-form-field,
+input[type=file].echo-form-field,
+textarea.echo-form-field,
+select.echo-form-field,
+select.echo-form-field + .select2-container,
+.acfe-form input[type=text],
+.acfe-form input[type=search],
+.acfe-form input[type=password],
+.acfe-form input[type=email],
+.acfe-form input[type=tel],
+.acfe-form input[type=number],
+.acfe-form input[type=file],
+.acfe-form textarea,
+.acfe-form select,
+#loginform .login-username input[type=text],
+#loginform .login-password input[type=password],
+.echo-form-field input[type=text],
+.echo-form-field input[type=search],
+.echo-form-field input[type=password],
+.echo-form-field input[type=email],
+.echo-form-field input[type=tel],
+.echo-form-field input[type=number],
+.echo-form-field input[type=file],
+.echo-form-field textarea,
+.echo-form-field select {
+  border: 2px solid #D80027;
+  min-height: 48px;
+  border-radius: 25px;
+  padding: 10px 25px;
+  color: black;
+  font-family: "Kanit", "sans-serif";
+}
+input[type=text].echo-form-field,
+input[type=search].echo-form-field,
+input[type=password].echo-form-field,
+input[type=email].echo-form-field,
+input[type=tel].echo-form-field,
+input[type=number].echo-form-field,
+input[type=file].echo-form-field,
+textarea.echo-form-field,
+select.echo-form-field,
+select.echo-form-field + .select2-container,
+.acfe-form input[type=text],
+.acfe-form input[type=search],
+.acfe-form input[type=password],
+.acfe-form input[type=email],
+.acfe-form input[type=tel],
+.acfe-form input[type=number],
+.acfe-form input[type=file],
+.acfe-form textarea,
+.acfe-form select,
+#loginform .login-username input[type=text],
+#loginform .login-password input[type=password],
+.echo-form-field input[type=text],
+.echo-form-field input[type=search],
+.echo-form-field input[type=password],
+.echo-form-field input[type=email],
+.echo-form-field input[type=tel],
+.echo-form-field input[type=number],
+.echo-form-field input[type=file],
+.echo-form-field textarea,
+.echo-form-field select {
+  font-size: 16px;
+}
+@media screen and (min-width: 480px) {
+  input[type=text].echo-form-field,
+  input[type=search].echo-form-field,
+  input[type=password].echo-form-field,
+  input[type=email].echo-form-field,
+  input[type=tel].echo-form-field,
+  input[type=number].echo-form-field,
+  input[type=file].echo-form-field,
+  textarea.echo-form-field,
+  select.echo-form-field,
+  select.echo-form-field + .select2-container,
+  .acfe-form input[type=text],
+  .acfe-form input[type=search],
+  .acfe-form input[type=password],
+  .acfe-form input[type=email],
+  .acfe-form input[type=tel],
+  .acfe-form input[type=number],
+  .acfe-form input[type=file],
+  .acfe-form textarea,
+  .acfe-form select,
+  #loginform .login-username input[type=text],
+  #loginform .login-password input[type=password],
+  .echo-form-field input[type=text],
+  .echo-form-field input[type=search],
+  .echo-form-field input[type=password],
+  .echo-form-field input[type=email],
+  .echo-form-field input[type=tel],
+  .echo-form-field input[type=number],
+  .echo-form-field input[type=file],
+  .echo-form-field textarea,
+  .echo-form-field select {
+    font-size: calc(16px + 2 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  input[type=text].echo-form-field,
+  input[type=search].echo-form-field,
+  input[type=password].echo-form-field,
+  input[type=email].echo-form-field,
+  input[type=tel].echo-form-field,
+  input[type=number].echo-form-field,
+  input[type=file].echo-form-field,
+  textarea.echo-form-field,
+  select.echo-form-field,
+  select.echo-form-field + .select2-container,
+  .acfe-form input[type=text],
+  .acfe-form input[type=search],
+  .acfe-form input[type=password],
+  .acfe-form input[type=email],
+  .acfe-form input[type=tel],
+  .acfe-form input[type=number],
+  .acfe-form input[type=file],
+  .acfe-form textarea,
+  .acfe-form select,
+  #loginform .login-username input[type=text],
+  #loginform .login-password input[type=password],
+  .echo-form-field input[type=text],
+  .echo-form-field input[type=search],
+  .echo-form-field input[type=password],
+  .echo-form-field input[type=email],
+  .echo-form-field input[type=tel],
+  .echo-form-field input[type=number],
+  .echo-form-field input[type=file],
+  .echo-form-field textarea,
+  .echo-form-field select {
+    font-size: 18px;
+  }
+}
+input[type=text].echo-form-field::-moz-placeholder, input[type=search].echo-form-field::-moz-placeholder, input[type=password].echo-form-field::-moz-placeholder, input[type=email].echo-form-field::-moz-placeholder, input[type=tel].echo-form-field::-moz-placeholder, input[type=number].echo-form-field::-moz-placeholder, input[type=file].echo-form-field::-moz-placeholder, textarea.echo-form-field::-moz-placeholder, select.echo-form-field::-moz-placeholder, select.echo-form-field + .select2-container::-moz-placeholder, .acfe-form input[type=text]::-moz-placeholder, .acfe-form input[type=search]::-moz-placeholder, .acfe-form input[type=password]::-moz-placeholder, .acfe-form input[type=email]::-moz-placeholder, .acfe-form input[type=tel]::-moz-placeholder, .acfe-form input[type=number]::-moz-placeholder, .acfe-form input[type=file]::-moz-placeholder, .acfe-form textarea::-moz-placeholder, .acfe-form select::-moz-placeholder, #loginform .login-username input[type=text]::-moz-placeholder, #loginform .login-password input[type=password]::-moz-placeholder, .echo-form-field input[type=text]::-moz-placeholder, .echo-form-field input[type=search]::-moz-placeholder, .echo-form-field input[type=password]::-moz-placeholder, .echo-form-field input[type=email]::-moz-placeholder, .echo-form-field input[type=tel]::-moz-placeholder, .echo-form-field input[type=number]::-moz-placeholder, .echo-form-field input[type=file]::-moz-placeholder, .echo-form-field textarea::-moz-placeholder, .echo-form-field select::-moz-placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+input[type=text].echo-form-field::placeholder,
+input[type=search].echo-form-field::placeholder,
+input[type=password].echo-form-field::placeholder,
+input[type=email].echo-form-field::placeholder,
+input[type=tel].echo-form-field::placeholder,
+input[type=number].echo-form-field::placeholder,
+input[type=file].echo-form-field::placeholder,
+textarea.echo-form-field::placeholder,
+select.echo-form-field::placeholder,
+select.echo-form-field + .select2-container::placeholder,
+.acfe-form input[type=text]::placeholder,
+.acfe-form input[type=search]::placeholder,
+.acfe-form input[type=password]::placeholder,
+.acfe-form input[type=email]::placeholder,
+.acfe-form input[type=tel]::placeholder,
+.acfe-form input[type=number]::placeholder,
+.acfe-form input[type=file]::placeholder,
+.acfe-form textarea::placeholder,
+.acfe-form select::placeholder,
+#loginform .login-username input[type=text]::placeholder,
+#loginform .login-password input[type=password]::placeholder,
+.echo-form-field input[type=text]::placeholder,
+.echo-form-field input[type=search]::placeholder,
+.echo-form-field input[type=password]::placeholder,
+.echo-form-field input[type=email]::placeholder,
+.echo-form-field input[type=tel]::placeholder,
+.echo-form-field input[type=number]::placeholder,
+.echo-form-field input[type=file]::placeholder,
+.echo-form-field textarea::placeholder,
+.echo-form-field select::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+input[type=text].echo-form-field::-ms-input-placeholder,
+input[type=search].echo-form-field::-ms-input-placeholder,
+input[type=password].echo-form-field::-ms-input-placeholder,
+input[type=email].echo-form-field::-ms-input-placeholder,
+input[type=tel].echo-form-field::-ms-input-placeholder,
+input[type=number].echo-form-field::-ms-input-placeholder,
+input[type=file].echo-form-field::-ms-input-placeholder,
+textarea.echo-form-field::-ms-input-placeholder,
+select.echo-form-field::-ms-input-placeholder,
+select.echo-form-field + .select2-container::-ms-input-placeholder,
+.acfe-form input[type=text]::-ms-input-placeholder,
+.acfe-form input[type=search]::-ms-input-placeholder,
+.acfe-form input[type=password]::-ms-input-placeholder,
+.acfe-form input[type=email]::-ms-input-placeholder,
+.acfe-form input[type=tel]::-ms-input-placeholder,
+.acfe-form input[type=number]::-ms-input-placeholder,
+.acfe-form input[type=file]::-ms-input-placeholder,
+.acfe-form textarea::-ms-input-placeholder,
+.acfe-form select::-ms-input-placeholder,
+#loginform .login-username input[type=text]::-ms-input-placeholder,
+#loginform .login-password input[type=password]::-ms-input-placeholder,
+.echo-form-field input[type=text]::-ms-input-placeholder,
+.echo-form-field input[type=search]::-ms-input-placeholder,
+.echo-form-field input[type=password]::-ms-input-placeholder,
+.echo-form-field input[type=email]::-ms-input-placeholder,
+.echo-form-field input[type=tel]::-ms-input-placeholder,
+.echo-form-field input[type=number]::-ms-input-placeholder,
+.echo-form-field input[type=file]::-ms-input-placeholder,
+.echo-form-field textarea::-ms-input-placeholder,
+.echo-form-field select::-ms-input-placeholder { /* Edge 12 -18 */
+  color: black;
+}
+
+textarea.echo-form-field,
+.echo-form-field textarea {
+  height: 150px;
+}
+
+select.echo-form-field,
+.echo-form-field select {
+  background-image: url(../images/icon-arrow-down.png);
+  background-repeat: no-repeat;
+  background-position: right 25px center;
+  background-size: 15px;
+}
+select.echo-form-field option,
+.echo-form-field select option {
+  color: #373737;
+}
+
+.wpcf7-acceptance {
+  font-size: 0.85em;
+}
+.wpcf7-acceptance .wpcf7-list-item {
+  margin: 0;
+  display: block;
+}
+.wpcf7-acceptance .wpcf7-list-item label {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.wpcf7-acceptance .wpcf7-list-item label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-color: white;
+  border: 2px solid #0052B4;
+  flex-basis: 27%;
+  min-width: 32px;
+  min-height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 8px;
+}
+@media (min-width: 576px) {
+  .wpcf7-acceptance .wpcf7-list-item label::before {
+    min-width: 42px;
+    min-height: 42px;
+    max-width: 42px;
+    max-height: 42px;
+    border-radius: 15px;
+  }
+}
+.wpcf7-acceptance .wpcf7-list-item label.checked-label::before {
+  background-image: url(../images/tick-icon.png);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+}
+.wpcf7-acceptance .wpcf7-list-item label input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.wpcf7-acceptance .wpcf7-list-item label span {
+  margin-left: 10px;
+  vertical-align: middle;
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+}
+
+.file-upload {
+  position: relative;
+}
+.file-upload input[type=file] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.file-upload .file-label {
+  cursor: pointer;
+  color: #0052B4;
+  text-decoration: underline;
+}
+.file-upload .file-label {
+  font-size: 18px;
+}
+@media screen and (min-width: 480px) {
+  .file-upload .file-label {
+    font-size: calc(18px + 2 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .file-upload .file-label {
+    font-size: 20px;
+  }
+}
+.file-upload .file-label {
+  font-style: italic;
+}
+.file-upload .file-label::before {
+  content: "";
+  background: url(../images/photo-icon.jpg) no-repeat center;
+  background-size: cover;
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 8px;
+  width: 60px;
+  height: 42px;
+}
+@media (min-width: 576px) {
+  .file-upload .file-label::before {
+    width: 73px;
+    height: 51px;
+  }
+}
+.file-upload .file-label:hover {
+  text-decoration: none;
+}
+
+/**************************************/
 /*                                    */
 /* !Header                            */
 /*                                    */
@@ -13890,7 +14223,6 @@ body .cky-consent-container {
 }
 
 .echo-block .usp-block {
-  padding: 0;
   min-height: 400px;
   display: flex;
   align-items: center;
@@ -13901,12 +14233,35 @@ body .cky-consent-container {
   z-index: 1;
 }
 .echo-block .usp-block .container .usp-list {
-  display: flex;
+  display: block;
   justify-content: space-between;
-  padding-left: 75px;
+  padding-left: 40px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .echo-block .usp-block .container .usp-list {
+    max-width: none;
+    padding-left: 75px;
+    display: flex;
+  }
 }
 .echo-block .usp-block .container .usp-list li {
   position: relative;
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .echo-block .usp-block .container .usp-list li {
+    width: auto;
+  }
+}
+.echo-block .usp-block .container .usp-list li:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media (min-width: 1200px) {
+  .echo-block .usp-block .container .usp-list li:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 .echo-block .usp-block .container .usp-list li:not(:last-child) {
   margin-right: 40px;
@@ -13932,22 +14287,48 @@ body .cky-consent-container {
 }
 .echo-block .usp-block .container .usp-list li::before {
   color: white;
-  width: 90px;
-  height: 90px;
-  line-height: 80px;
+  width: 60px;
+  height: 60px;
+  line-height: 48px;
   border-radius: 100px;
   border: 7px solid white;
   background-color: #0052B4;
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  left: -75px;
+  left: -40px;
+}
+@media (min-width: 576px) {
+  .echo-block .usp-block .container .usp-list li::before {
+    width: 70px;
+    height: 70px;
+    line-height: 55px;
+  }
+}
+@media (min-width: 1200px) {
+  .echo-block .usp-block .container .usp-list li::before {
+    width: 90px;
+    height: 90px;
+    line-height: 80px;
+    border-radius: 100px;
+    left: -75px;
+  }
 }
 .echo-block .usp-block .container .usp-list li span {
-  padding: 20px 50px 20px 60px;
+  padding: 20px 30px;
   display: block;
   background-color: #D80027;
   clip-path: polygon(0 0, 100% 0%, 97% 100%, 0% 100%);
+}
+@media (min-width: 1200px) {
+  .echo-block .usp-block .container .usp-list li span {
+    padding: 20px 30px 20px 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .echo-block .usp-block .container .usp-list li span {
+    padding: 20px 50px 20px 60px;
+  }
 }
 .echo-block .usp-block .container .usp-list li span .h5 {
   color: white;
@@ -14007,12 +14388,199 @@ body .cky-consent-container {
 }
 .echo-block .brands-container {
   max-width: 1800px;
+  margin: 0 auto;
 }
 .echo-block .brands-container .brands-slider .logo img {
   height: 50px;
   width: auto;
   margin: 0 auto;
   display: block;
+}
+
+.accreditation-logo .container {
+  max-width: 800px;
+}
+.accreditation-logo .container .acc-logos .acc-logo-label {
+  color: #373737;
+}
+.accreditation-logo .container .acc-logos .acc-logo-label {
+  font-size: 14px;
+}
+@media screen and (min-width: 480px) {
+  .accreditation-logo .container .acc-logos .acc-logo-label {
+    font-size: calc(14px + 2 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .accreditation-logo .container .acc-logos .acc-logo-label {
+    font-size: 16px;
+  }
+}
+.accreditation-logo .container .acc-logos .acc-logo-label {
+  font-family: "Kanit", "sans-serif";
+}
+
+.echo-block-contact_form {
+  border-top: 10px solid #0052B4;
+  border-bottom: 10px solid #0052B4;
+  padding: 10px 0;
+}
+@media screen and (max-width: 576px) {
+  .echo-block-contact_form .logo-24-7 img {
+    width: 55px;
+  }
+}
+.echo-block-contact_form .contact-form {
+  background-color: #f7f7f7;
+  padding-bottom: 0;
+}
+.echo-block-contact_form .contact-form .wpcf7 {
+  max-width: none;
+}
+.echo-block-contact_form .contact-form .wpcf7 .wpcf7-submit {
+  min-height: 48px;
+}
+.echo-block-contact_form .contact-details {
+  background-color: #D80027;
+  margin-top: 40px;
+  padding: 15px 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .echo-block-contact_form .contact-details {
+    margin-top: 80px;
+  }
+}
+@media (min-width: 992px) {
+  .echo-block-contact_form .contact-details {
+    text-align: left;
+  }
+}
+.echo-block-contact_form .contact-details * {
+  color: white;
+}
+.echo-block-contact_form .contact-details .phone-wrap, .echo-block-contact_form .contact-details .email-wrap {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .echo-block-contact_form .contact-details .phone-wrap, .echo-block-contact_form .contact-details .email-wrap {
+    padding-left: 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .echo-block-contact_form .contact-details .phone-wrap, .echo-block-contact_form .contact-details .email-wrap {
+    padding-left: 117px;
+  }
+}
+.echo-block-contact_form .contact-details .phone-wrap img, .echo-block-contact_form .contact-details .email-wrap img {
+  width: 60px;
+  display: none;
+}
+@media (min-width: 992px) {
+  .echo-block-contact_form .contact-details .phone-wrap img, .echo-block-contact_form .contact-details .email-wrap img {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@media (min-width: 992px) {
+  .echo-block-contact_form .contact-details .phone-wrap img, .echo-block-contact_form .contact-details .email-wrap img {
+    width: 80px;
+  }
+}
+@media (min-width: 1200px) {
+  .echo-block-contact_form .contact-details .phone-wrap img, .echo-block-contact_form .contact-details .email-wrap img {
+    width: 97px;
+  }
+}
+.echo-block-contact_form .contact-details .phone, .echo-block-contact_form .contact-details .email {
+  font-size: 20px;
+}
+@media screen and (min-width: 480px) {
+  .echo-block-contact_form .contact-details .phone, .echo-block-contact_form .contact-details .email {
+    font-size: calc(20px + 6 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .echo-block-contact_form .contact-details .phone, .echo-block-contact_form .contact-details .email {
+    font-size: 26px;
+  }
+}
+.echo-block-contact_form .contact-details .phone, .echo-block-contact_form .contact-details .email {
+  font-weight: 600;
+  font-family: "Kanit", "sans-serif";
+}
+.echo-block-contact_form .contact-details .phone .label, .echo-block-contact_form .contact-details .email .label {
+  font-weight: 300;
+}
+
+.map-block .header {
+  padding: 25px 0;
+  background-color: black;
+  position: relative;
+}
+@media (min-width: 576px) {
+  .map-block .header {
+    padding: 35px 0 35px 150px;
+  }
+}
+@media (min-width: 992px) {
+  .map-block .header {
+    padding: 35px 0;
+  }
+}
+.map-block .header .container {
+  max-width: 850px;
+  position: static;
+}
+@media (min-width: 992px) {
+  .map-block .header .container {
+    position: relative;
+  }
+}
+@media (min-width: 576px) {
+  .map-block .header .container::before {
+    content: "";
+    background: url(../images/uk-map-icon.png) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    width: 123px;
+    height: 230px;
+  }
+}
+@media (min-width: 992px) {
+  .map-block .header .container::before {
+    left: -40px;
+  }
+}
+@media (min-width: 1200px) {
+  .map-block .header .container::before {
+    width: 163px;
+    height: 305px;
+    left: -143px;
+  }
+}
+.map-block .header .container .subtitle {
+  font-size: 26px;
+}
+@media screen and (min-width: 480px) {
+  .map-block .header .container .subtitle {
+    font-size: calc(26px + 6 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .map-block .header .container .subtitle {
+    font-size: 32px;
+  }
+}
+.map-block .header .container .subtitle {
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=theme.css.map */

@@ -791,6 +791,176 @@ h5, .h5 {
 }
 
 /**************************************/
+/* !CF7, ACF & form fields            */
+/**************************************/
+
+input[type=text].echo-form-field,
+input[type=search].echo-form-field,
+input[type=password].echo-form-field,
+input[type=email].echo-form-field,
+input[type=tel].echo-form-field,
+input[type=number].echo-form-field,
+input[type=file].echo-form-field,
+textarea.echo-form-field,
+select.echo-form-field,
+select.echo-form-field + .select2-container,
+.acfe-form input[type=text],
+.acfe-form input[type=search],
+.acfe-form input[type=password],
+.acfe-form input[type=email],
+.acfe-form input[type=tel],
+.acfe-form input[type=number],
+.acfe-form input[type=file],
+.acfe-form textarea,
+.acfe-form select,
+#loginform .login-username input[type=text],
+#loginform .login-password input[type=password],
+.echo-form-field input[type=text],
+.echo-form-field input[type=search],
+.echo-form-field input[type=password],
+.echo-form-field input[type=email],
+.echo-form-field input[type=tel],
+.echo-form-field input[type=number],
+.echo-form-field input[type=file],
+.echo-form-field textarea,
+.echo-form-field select {
+	border: 2px solid $red;
+    min-height: 48px;
+    border-radius: 25px;
+    padding: 10px 25px;
+	color: black;
+	font-family: $kanit;
+	@include fluid-type($min_width, $max_width, 16px, 18px);
+
+	&::placeholder {
+		color: black;
+		opacity: 1; /* Firefox */
+	}
+
+	&::-ms-input-placeholder { /* Edge 12 -18 */
+		color: black;
+	}
+}
+
+textarea.echo-form-field,
+.echo-form-field textarea {
+	height: 150px;
+}
+
+select.echo-form-field,
+.echo-form-field select {
+	background-image: url(../images/icon-arrow-down.png);
+	background-repeat: no-repeat;
+	background-position: right 25px center;
+	background-size: 15px;
+
+	option {
+		color: $copy-color;
+	}
+}
+
+.wpcf7-acceptance {
+    font-size: .85em;
+
+    .wpcf7-list-item {
+      margin: 0;
+	  display: block;
+
+      label {
+        display: flex;
+        position: relative;
+		align-items: center;
+
+        &::before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			background-color: white;
+			border: 2px solid $blue;
+			flex-basis: 27%;
+			min-width: 32px;
+			min-height: 32px;
+			max-width: 32px;
+			max-height: 32px;
+			border-radius: 8px;
+
+			@include media-breakpoint-up(sm) {
+				min-width: 42px;
+				min-height: 42px;
+				max-width: 42px;
+				max-height: 42px;
+				border-radius: 15px;
+			}
+        }
+
+        &.checked-label {
+			&::before {
+				background-image: url(../images/tick-icon.png);
+				background-repeat: no-repeat;
+				background-size: 40%;
+				background-position: center;
+			}
+        }
+
+        input[type=checkbox] {
+          	appearance: none;
+        }
+
+        span {
+			margin-left: 10px;
+			vertical-align: middle;
+			font-size: 15px;
+			color: black;
+			font-weight: bold;
+			
+        }
+      }
+    }
+}
+
+.file-upload {
+	position: relative;
+
+	input[type=file] {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+	.file-label {
+		cursor: pointer;
+		color: $blue;
+		text-decoration: underline;
+		@include fluid-type($min_width, $max_width, 18px, 20px);
+		font-style: italic;
+
+		&::before {
+			content: '';
+			background: url(../images/photo-icon.jpg) no-repeat center;
+			background-size: cover;
+			display: inline-block;
+			vertical-align: sub;
+			margin-right: 8px;
+			width: 60px;
+    		height: 42px;
+
+			@include media-breakpoint-up(sm) {
+				width: 73px;
+				height: 51px;
+			}
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+/**************************************/
 /*                                    */
 /* !Header                            */
 /*                                    */

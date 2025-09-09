@@ -1,0 +1,18 @@
+<svg id="Email_icon" data-name="Email icon" xmlns="http://www.w3.org/2000/svg" width="97" height="97" viewBox="0 0 97 97">
+  <g id="Group_4077" data-name="Group 4077" transform="translate(-1032 -1507)">
+    <circle id="Ellipse_359" data-name="Ellipse 359" cx="48.5" cy="48.5" r="48.5" transform="translate(1032 1507)" fill="#fafafa"/>
+    <circle id="Ellipse_358" data-name="Ellipse 358" cx="41.5" cy="41.5" r="41.5" transform="translate(1039 1514)" fill="#0052b4"/>
+  </g>
+  <g id="mail" transform="translate(26.598 -35.412)">
+    <g id="Group_6050" data-name="Group 6050" transform="translate(1.564 68.267)">
+      <g id="Group_6049" data-name="Group 6049" transform="translate(0 0)">
+        <path id="Path_7825" data-name="Path 7825" d="M57.743,68.267H17.067L37.4,85.019,57.973,68.314A1.415,1.415,0,0,0,57.743,68.267Z" transform="translate(-17.067 -68.267)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_6052" data-name="Group 6052" transform="translate(0 71.03)">
+      <g id="Group_6051" data-name="Group 6051" transform="translate(0 0)">
+        <path id="Path_7826" data-name="Path 7826" d="M22.889,115.631a1.564,1.564,0,0,1-1.982,0L0,98.406v26.962a1.564,1.564,0,0,0,1.564,1.564H42.24a1.564,1.564,0,0,0,1.564-1.564V98.638Z" transform="translate(0 -98.406)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
