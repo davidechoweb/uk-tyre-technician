@@ -346,6 +346,12 @@ h5, .h5 {
 	@include fluid-type($min_width, $max_width, 18px, 22px);
 }
 
+.lead-text {
+	font-family: $open-sans;
+	font-weight: 400;
+	@include fluid-type($min_width, $max_width, 18px, 22px);
+}
+
 /**************************************/
 /* !- Register Font Face              */
 /**************************************/
@@ -876,6 +882,8 @@ select.echo-form-field,
 	-moz-appearance: none;
 	appearance: none;
 	padding-right: 40px;
+	background-position: right 25px center;
+	background-size: 15px;
 
 	option {
 		color: $copy-color;

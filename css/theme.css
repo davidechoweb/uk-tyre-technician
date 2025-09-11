@@ -12792,6 +12792,24 @@ h5, .h5, #product-archive .woocommerce-loop-product__title {
   }
 }
 
+.lead-text {
+  font-family: "Open Sans", "sans-serif";
+  font-weight: 400;
+}
+.lead-text {
+  font-size: 18px;
+}
+@media screen and (min-width: 480px) {
+  .lead-text {
+    font-size: calc(18px + 4 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .lead-text {
+    font-size: 22px;
+  }
+}
+
 /**************************************/
 /* !- Register Font Face              */
 /**************************************/
@@ -13382,6 +13400,8 @@ select.echo-form-field,
   -moz-appearance: none;
   appearance: none;
   padding-right: 40px;
+  background-position: right 25px center;
+  background-size: 15px;
 }
 select.echo-form-field option,
 .echo-form-field select option {
