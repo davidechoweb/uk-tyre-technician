@@ -296,6 +296,7 @@ h1, .h1 {
 	@include fluid-type($min_width, $max_width, 32px, 48px);
 	font-style: italic;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 h2, .h2 {
@@ -305,6 +306,7 @@ h2, .h2 {
 	@include fluid-type($min_width, $max_width, 32px, 48px);
 	font-style: italic;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
   
 h3, .h3 {
@@ -314,25 +316,34 @@ h3, .h3 {
 	font-style: italic;
 	font-weight: 700;
 	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
 }
 
 h4, .h4 {
 	font-family: $kanit;
-	font-size: 22px;
 	color: inherit;
 	@include fluid-type($min_width, $max_width, 22px, 28px);
 	font-style: italic;
 	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
 }
 
 h5, .h5 {
 	font-family: $kanit;
 	font-weight: 300;
-	font-size: 18px;
 	color: inherit;
 	@include fluid-type($min_width, $max_width, 18px, 22px);
 	font-style: italic;
 	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.lead-text {
+	font-family: $open-sans;
+	font-weight: 400;
+	@include fluid-type($min_width, $max_width, 18px, 22px);
 }
 
 /**************************************/
@@ -566,7 +577,7 @@ h5, .h5 {
 
 		&:hover {
 			background-color: white;
-			color: $green;
+			color: $red;
 		}
 	}
 
@@ -577,6 +588,7 @@ h5, .h5 {
 
 		&:hover {
 			background-color: white;
+			border-color: $green !important;
 			color: $green;
 		}
 	}
@@ -590,6 +602,19 @@ h5, .h5 {
 		&:hover {
 			background-color: $blue;
 			border-color: $blue;
+			color: $white;
+		}
+	}
+
+	&--outline-black {
+		@extend .echo-button;
+		background-color: $white;
+		border-color: $copy-color;
+		color: $copy-color;
+
+		&:hover {
+			background-color: $copy-color;
+			border-color: $copy-color;
 			color: $white;
 		}
 	}
@@ -625,8 +650,6 @@ h5, .h5 {
 					order: 1;
 				}
 			}
-
-			
 
 			.content-wrap {
 				position: relative;
@@ -776,6 +799,235 @@ h5, .h5 {
     object-fit: cover;
     -o-object-position: center;
     object-position: center;
+}
+
+.echo-block > div {
+	padding: 40px 0;
+
+	@include media-breakpoint-up(md) {
+		padding: 80px 0;
+	}
+}
+
+/**************************************/
+/* !CF7, ACF & form fields            */
+/**************************************/
+
+input[type=text].echo-form-field,
+input[type=search].echo-form-field,
+input[type=password].echo-form-field,
+input[type=email].echo-form-field,
+input[type=tel].echo-form-field,
+input[type=number].echo-form-field,
+input[type=file].echo-form-field,
+textarea.echo-form-field,
+select.echo-form-field,
+select.echo-form-field + .select2-container,
+.acfe-form input[type=text],
+.acfe-form input[type=search],
+.acfe-form input[type=password],
+.acfe-form input[type=email],
+.acfe-form input[type=tel],
+.acfe-form input[type=number],
+.acfe-form input[type=file],
+.acfe-form textarea,
+.acfe-form select,
+#loginform .login-username input[type=text],
+#loginform .login-password input[type=password],
+.echo-form-field input[type=text],
+.echo-form-field input[type=search],
+.echo-form-field input[type=password],
+.echo-form-field input[type=email],
+.echo-form-field input[type=tel],
+.echo-form-field input[type=number],
+.echo-form-field input[type=file],
+.echo-form-field textarea,
+.echo-form-field select {
+	border: 2px solid $red;
+    min-height: 48px;
+    border-radius: 25px;
+    padding: 10px 25px;
+	color: black;
+	font-family: $kanit;
+	@include fluid-type($min_width, $max_width, 16px, 18px);
+
+	&::placeholder {
+		color: black;
+		opacity: 1; /* Firefox */
+	}
+
+	&::-ms-input-placeholder { /* Edge 12 -18 */
+		color: black;
+	}
+}
+
+textarea.echo-form-field,
+.echo-form-field textarea {
+	height: 150px;
+}
+
+select.echo-form-field,
+.echo-form-field select {
+	background-image: url(../images/icon-arrow-down.png);
+	background-repeat: no-repeat;
+	background-position: right 15px center;
+	background-size: 15px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding-right: 40px;
+
+	option {
+		color: $copy-color;
+	}
+}
+
+.wpcf7-acceptance {
+    font-size: .85em;
+
+    .wpcf7-list-item {
+      margin: 0;
+	  display: block;
+
+      label {
+        display: flex;
+        position: relative;
+		align-items: center;
+
+        &::before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			background-color: white;
+			border: 2px solid $blue;
+			flex-basis: 27%;
+			min-width: 32px;
+			min-height: 32px;
+			max-width: 32px;
+			max-height: 32px;
+			border-radius: 8px;
+
+			@include media-breakpoint-up(sm) {
+				min-width: 42px;
+				min-height: 42px;
+				max-width: 42px;
+				max-height: 42px;
+				border-radius: 15px;
+			}
+        }
+
+        &.checked-label {
+			&::before {
+				background-image: url(../images/tick-icon.png);
+				background-repeat: no-repeat;
+				background-size: 40%;
+				background-position: center;
+			}
+        }
+
+        input[type=checkbox] {
+          	appearance: none;
+        }
+
+        span {
+			margin-left: 10px;
+			vertical-align: middle;
+			font-size: 15px;
+			color: black;
+			font-weight: bold;
+			
+        }
+      }
+    }
+}
+
+.echo-checkbox-label {
+	display: flex;
+	position: relative;
+	align-items: center;
+	@include fluid-type($min_width, $max_width, 16px, 18px);
+	color: $blue;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		border: 1px solid $blue;
+		flex-basis: 27%;
+		min-width: 18px;
+		min-height: 18px;
+		max-width: 18px;
+		max-height: 18px;
+		border-radius: 100px;
+		margin-right: 7px;
+	}
+
+	&.checked-label {
+		font-weight: bold;
+
+		&::before {
+			background-image: url(../images/tick-icon-white.png);
+			background-repeat: no-repeat;
+			background-size: 60%;
+			background-position: center;
+			background-color: $blue;
+		}
+	}
+
+	input[type=checkbox] {
+		appearance: none;
+	}
+
+	span {
+		margin-left: 10px;
+		vertical-align: middle;
+		font-size: 15px;
+		color: black;
+		font-weight: bold;
+		
+	}
+}
+
+.file-upload {
+	position: relative;
+
+	input[type=file] {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+	.file-label {
+		cursor: pointer;
+		color: $blue;
+		text-decoration: underline;
+		@include fluid-type($min_width, $max_width, 18px, 20px);
+		font-style: italic;
+
+		&::before {
+			content: '';
+			background: url(../images/photo-icon.jpg) no-repeat center;
+			background-size: cover;
+			display: inline-block;
+			vertical-align: sub;
+			margin-right: 8px;
+			width: 60px;
+    		height: 42px;
+
+			@include media-breakpoint-up(sm) {
+				width: 73px;
+				height: 51px;
+			}
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 /**************************************/
@@ -1152,6 +1404,168 @@ h5, .h5 {
 }
 
 /**************************************/
+/* !- Product Archive                 */
+/**************************************/
+#product-archive {
+	.woocommerce-loop-product__title {
+		@extend .h5;
+		color: $copy-color;
+		text-transform: uppercase;
+		font-style: normal;
+		font-weight: bold;
+		padding: 0;
+		margin: 0;
+	}
+
+	.product {
+		.entry-summary {
+			.serial-number {
+				@include fluid-type($min_width, $max_width, 16px, 18px);
+				font-family: $kanit;
+				color: #7C7C7C;
+			}
+
+			.stock {
+				@include fluid-type($min_width, $max_width, 16px, 18px);
+				font-family: $kanit;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+.product-card {
+	a {
+		position: relative;
+
+		.rating-badge {
+			background-color: $blue;
+			position: absolute;
+			text-align: center;
+			padding: 3px 12px;
+			z-index: 1;
+			top: 12px;
+			right: -12px;
+
+			.icon {
+				color: #ffde1d;
+				font-size: 14px;
+			}
+
+			span {
+				color: white;
+				display: block;
+				@include fluid-type($min_width, $max_width, 14px, 16px);
+				font-weight: 700;
+				text-transform: uppercase;
+				font-family: $kanit;
+				letter-spacing: 1px;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-top: 12px solid #000;
+				border-right: 12px solid transparent;
+				right: 0;
+				bottom: -12px;
+			}
+		}
+	}
+	
+	.stock-quantity {
+		color: $green;
+		font-family: $kanit;
+		font-weight: 500;
+	}
+
+	.echo-button {
+		@include fluid-type($min_width, $max_width, 16px, 18px);
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 100%;
+	}
+
+	.woocommerce-placeholder {
+		border: 0 !important;
+	}
+}
+
+.product-filter-wrap {
+	.filter-title {
+		text-align: center;
+		color: $blue;
+		position: relative;
+
+		span {
+			display: inline-block;
+			background-color: white;
+			padding: 0 30px;
+			position: relative;
+			z-index: 1;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: 1px;
+			left: 0;
+			right: 0;
+			background-color: $blue;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+	}
+
+	#product-filter {
+		background-color: #F0F0F0;
+		padding: 40px 40px;
+
+		.accordion {
+			.acc-item {
+				&:not(:last-child) {
+					margin-bottom: 40px;
+				}
+
+				.acc-title {
+					border-bottom: 1px solid $blue;
+					position: relative;
+					padding-bottom: 10px;
+					margin-bottom: 15px;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					.icon {
+						font-size: 10px;
+					}
+
+					.icon-minus {
+						display: none;
+					}
+				}
+
+				&.active {
+					.acc-title {
+						.icon-plus {
+							display: none;
+						}
+
+						.icon-minus {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/**************************************/
 /* !- Utility                         */
 /**************************************/
 .echo-object-fit-cover {
@@ -1174,6 +1588,42 @@ h5, .h5 {
     box-sizing: border-box;
     object-fit: contain;
     object-position: center;
+}
+
+.text-blue {
+	color: $blue;
+
+	* {
+		color: $blue;	
+	}
+}
+
+.woocommerce {
+	.woocommerce-pagination {
+		.page-numbers {
+			margin: 0;
+			border: 0;
+
+			li {
+				margin: 0 8px;
+				border: 0;
+
+				a, span {
+					width: 35px;
+					height: 35px;
+					border: 1px solid $blue;
+					border-radius: 100px;
+					font-weight: bold;
+					padding: 9px 5px;
+
+					&:hover, &.current {
+						background-color: $blue;
+						color: white;
+					}
+				}
+			}
+		}
+	}
 }
 
 /**************************************/

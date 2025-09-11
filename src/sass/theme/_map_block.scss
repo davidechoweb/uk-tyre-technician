@@ -1,0 +1,56 @@
+.map-block {
+    .header {
+        padding: 25px 0;
+        background-color: black;
+        position: relative;
+
+        @include media-breakpoint-up(sm) {
+            padding: 35px 0 35px 150px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: 35px 0;
+        }
+
+        .container {
+            max-width: 850px;
+            position: static;
+
+            @include media-breakpoint-up(lg) {
+                position: relative;
+            }
+
+            &::before {
+                @include media-breakpoint-up(sm) {
+                    content: '';
+                    background: url(../images/uk-map-icon.png) no-repeat center;
+                    background-size: contain;
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    left: 20px;
+                    width: 123px;
+                    height: 230px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    left: -40px;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    width: 163px;
+                    height: 305px;
+                    left: -143px;
+                }
+            }
+
+            .subtitle {
+                @include fluid-type($min_width, $max_width, 26px, 32px);
+                font-weight: 600;
+            }
+        }
+    }
+}

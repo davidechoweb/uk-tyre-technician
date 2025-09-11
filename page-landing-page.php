@@ -37,7 +37,7 @@ $theme_options = get_fields('option');
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/uk-tyre.png" alt="Tyre" class="tyre-deco">
                                 <div class="box">
                                     <h3 class="h3"><img class="landing-page-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/uk-tyre-logo.png" alt=""></h3>
-                                    <a href="<?php echo home_url(); ?>" class="echo-button--blue">Homepage</a>
+                                    <a href="<?php echo home_url(); ?>/home" class="echo-button--blue">Homepage</a>
                                 </div>
                             </div>
                         </div>

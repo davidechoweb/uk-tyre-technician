@@ -1,56 +1,103 @@
-.usp-block {
-    min-height: 400px;
-    display: flex;
-    align-items: center;
+.echo-block {
+    .usp-block {
+        min-height: 400px;
+        display: flex;
+        align-items: center;
 
-    .container {
-        max-width: 1800px;
-        position: relative;
-        z-index: 1;
+        .container {
+            max-width: 1800px;
+            position: relative;
+            z-index: 1;
 
-        .usp-list {
-            display: flex;
-            justify-content: space-between;
-            padding-left: 75px;
+            .usp-list {
+                display: block;
+                justify-content: space-between;
+                padding-left: 40px;
+                max-width: 650px;
+                margin: 0 auto;
 
-            li {
-                position: relative;
-
-                &:not(:last-child) {
-                    margin-right: 40px;
+                @include media-breakpoint-up(xl) {
+                    max-width: none;
+                    padding-left: 75px;
+                    display: flex;
                 }
 
-                &::before {
-                    content: '\e913';
-                    font-family: icomoon;
-                    position: absolute;
-                    z-index: 1;
-                    @include fluid-type($min_width, $max_width, 26px, 36px);
-                    color: white;
-                    width: 90px;
-                    height: 90px;
-                    line-height: 80px;
-                    border-radius: 100px;
-                    border: 7px solid white;
-                    background-color: $blue;
-                    text-align: center;
-                    top: 50%;
-                    -webkit-transform: translateY(-50%);
-                    -ms-transform: translateY(-50%);
-                    transform: translateY(-50%);
-                    left: -75px;
-                }
+                li {
+                    position: relative;
+                    width: 100%;
 
-                span {
-                    padding: 20px 50px 20px 60px;
-                    display: block;
-                    background-color: $red;
-                    clip-path: polygon(0 0, 100% 0%, 97% 100%, 0% 100%);
+                    @include media-breakpoint-up(xl) {
+                        width: auto;
+                    }
 
-                    .h5 {
+                    &:not(:last-child) {
+                        margin-bottom: 30px;
+                    }
+                    
+                    @include media-breakpoint-up(xl) {
+                        &:not(:last-child) {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    &:not(:last-child) {
+                        margin-right: 40px;
+                    }
+
+                    &::before {
+                        content: '\e913';
+                        font-family: icomoon;
+                        position: absolute;
+                        z-index: 1;
+                        @include fluid-type($min_width, $max_width, 26px, 36px);
                         color: white;
-                        font-weight: 600;
-                        @include fluid-type($min_width, $max_width, 20px, 24px);
+                        width: 60px;
+                        height: 60px;
+                        line-height: 48px;
+                        border-radius: 100px;
+                        border: 7px solid white;
+                        background-color: $blue;
+                        text-align: center;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        left: -40px;
+
+                        @include media-breakpoint-up(sm) {
+                            width: 70px;
+                            height: 70px;
+                            line-height: 55px;
+                        }
+
+                        @include media-breakpoint-up(xl) {
+                            width: 90px;
+                            height: 90px;
+                            line-height: 80px;
+                            border-radius: 100px;
+                            left: -75px;
+                        }
+                    }
+
+                    span {
+                        padding: 20px 30px;
+                        display: block;
+                        background-color: $red;
+                        clip-path: polygon(0 0, 100% 0%, 97% 100%, 0% 100%);
+
+                        @include media-breakpoint-up(xl) {
+                            padding: 20px 30px 20px 50px;
+                        }
+
+                        @include media-breakpoint-up(xl) {
+                            padding: 20px 50px 20px 60px;
+                        }
+
+                        .h5 {
+                            color: white;
+                            font-weight: 600;
+                            @include fluid-type($min_width, $max_width, 20px, 24px);
+                        }
                     }
                 }
             }

@@ -53,11 +53,20 @@ if ( ! function_exists( 'understrap_woocommerce_wrapper_start' ) ) {
 			$container = '';
 		}
 
-		echo '<div class="wrapper" id="woocommerce-wrapper">';
+		echo '<div class="wrapper echo-block" id="woocommerce-wrapper">';
+		echo '<div>';
 		echo '<div class="' . esc_attr( $container ) . '" id="content" tabindex="-1">';
 		echo '<div class="row">';
-		get_template_part( 'global-templates/left-sidebar-check' );
-		echo '<main class="site-main" id="main">';
+
+		if ( is_shop() || is_product_taxonomy() ) {
+			get_template_part( 'global-templates/left-sidebar-check' );
+		}
+
+		if ( is_shop() || is_product_taxonomy() ) {
+			echo '<main class="col-md-8 site-main" id="product-archive">';
+		} else {
+			echo '<main class="col-md-12 site-main" id="product-archive">';
+		}
 	}
 }
 
@@ -70,6 +79,7 @@ if ( ! function_exists( 'understrap_woocommerce_wrapper_end' ) ) {
 		get_template_part( 'global-templates/right-sidebar-check' );
 		echo '</div><!-- .row -->';
 		echo '</div><!-- .container(-fluid) -->';
+		echo '</div>';
 		echo '</div><!-- #woocommerce-wrapper -->';
 	}
 }
@@ -329,7 +339,7 @@ if ( ! function_exists( 'understrap_account_menu_item_classes' ) ) {
 
 /* Function to create extra rules for the sale badge */
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
-add_action( 'woocommerce_before_single_product_summary', 'bbloomer_new_badge_shop_page', 10 );
+// add_action( 'woocommerce_before_single_product_summary', 'bbloomer_new_badge_shop_page', 10 );
 
 function bbloomer_new_badge_shop_page() {
 	global $product;
@@ -370,3 +380,92 @@ function remove_image_zoom_support() {
     remove_theme_support( 'wc-product-gallery-zoom' );
 }
 add_action( 'wp', 'remove_image_zoom_support', 100 );
+
+// disable breadcrumbs
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+
+// remove result count
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+// remove default filter
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+// Shop/Archive pages
+add_filter( 'woocommerce_product_add_to_cart_text', function( $text, $product ) {
+    // Example: change text depending on product type
+    if ( $product->is_type( 'simple' ) ) {
+        return __( 'Buy Now', 'uk-tyre-technician' );
+    }
+    // if ( $product->is_type( 'variable' ) ) {
+    //     return __( 'Choose Options', 'uk-tyre-technician' );
+    // }
+    return $text;
+}, 10, 2 );
+
+// disable price on product cards
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+
+add_action( 'woocommerce_after_shop_loop_item_title', 'my_add_content_inside_product_link', 15 );
+function my_add_content_inside_product_link() {
+	global $product; 
+
+	$terms = wp_get_post_terms( $product->get_id(), 'rating');
+
+	if ( $terms[0]->name == 'Premium' ) {
+		echo '<span class="rating-badge"><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><span>' . $terms[0]->name . '</span></span>';
+	} elseif ( $terms[0]->name == 'Mid Range' ) {
+		echo '<span class="rating-badge"><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><span>' . $terms[0]->name . '</span></span>';
+	}
+}
+
+// allow products filter by acf fields
+add_action( 'pre_get_posts', function( $query ) {
+    if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'product' ) ) {
+
+        if ( isset( $_GET['tyre_quality'] ) && ! empty( $_GET['tyre_quality'] ) ) {
+            $tyre_qualities = (array) $_GET['tyre_quality'];
+
+            $meta_query = (array) $query->get( 'meta_query' );
+
+            $meta_query[] = array(
+                'key'     => 'quality', // your ACF field name
+                'value'   => $tyre_qualities,
+                'compare' => 'IN'
+            );
+
+            $query->set( 'meta_query', $meta_query );
+        }
+    }
+});
+
+add_filter( 'woocommerce_pagination_args', function( $args ) {
+    $args['prev_text'] = '&#x276E;';
+    $args['next_text'] = '&#x276F;';
+    return $args;
+});
+
+// Change placeholder globally (product pages + archives)
+add_filter( 'woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder', 10 );
+function custom_woocommerce_placeholder( $src ) {
+    // Use your custom image
+    $src = get_stylesheet_directory_uri() . '/images/tyre-placeholder.jpg';
+    return $src;
+}
+
+// Also override the function WooCommerce calls for HTML <img> output
+add_filter( 'woocommerce_placeholder_img', 'custom_woocommerce_placeholder_img' );
+function custom_woocommerce_placeholder_img( $image_html ) {
+    $src = get_stylesheet_directory_uri() . '/images/tyre-placeholder.jpg';
+    $image_html = '<img src="' . esc_url( $src ) . '" alt="Placeholder" class="woocommerce-placeholder wp-post-image" />';
+    return $image_html;
+}
+
+// remove related product
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+// Add custom HTML below the product title on single product page
+add_action( 'woocommerce_single_product_summary', 'html_below_product_title', 6 );
+function html_below_product_title() {
+	global $product;
+    echo '<div class="serial-number">Serial No: ' . get_field( 'tyre_details', $product->get_id() )['serial_number'] . '</div>';
+}
