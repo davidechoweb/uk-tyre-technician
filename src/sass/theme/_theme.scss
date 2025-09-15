@@ -1265,6 +1265,11 @@ select.echo-form-field,
 	background-size: cover;
 	background-position: top;
 	padding: 140px 0 70px;
+	margin-top: 40px;
+
+	@include media-breakpoint-up(xl) {
+		margin-top: 80px;
+	}
 
 	@media screen and (min-width:960px) {
 		padding: 215px 0 130px;
@@ -1438,6 +1443,71 @@ select.echo-form-field,
 				font-family: $kanit;
 				font-weight: 500;
 			}
+
+			// quantity
+			.quantity-wrap {
+				display: flex;
+
+				.quantity {
+					float: none;
+					display: flex;
+					align-items: center;
+
+					.qty-button {
+						border: 0;
+						background-color: transparent;
+						border-radius: 100px;
+						border: 1px solid #D6D6D6;
+						width: 34px;
+						height: 34px;
+					}
+
+					input.qty {
+						border-radius: 100px;
+						width: 34px;
+						height: 34px;
+						border-color: #707070;
+						font-weight: bold;
+						font-family: $kanit;
+						margin: 0 12px;
+
+						&::-webkit-outer-spin-button,
+						&::-webkit-inner-spin-button {
+							-webkit-appearance: none;
+							margin: 0;
+						}
+					}
+				}
+			}
+
+			// price
+			.price-exc-vat {
+				color: $red;
+				font-weight: 500;
+				@include fluid-type($min_width, $max_width, 20px, 28px);
+				font-family: $kanit;
+
+				small {
+					font-family: $open-sans;
+					@include fluid-type($min_width, $max_width, 10px, 10px);
+					vertical-align: super;
+					font-weight: inherit;
+				}
+			}
+
+			.price-inc-vat {
+				font-weight: 500;
+				font-family: $kanit;
+				color: black;
+				@include fluid-type($min_width, $max_width, 16px, 18px);
+
+				small {
+					font-family: $open-sans;
+					@include fluid-type($min_width, $max_width, 10px, 10px);
+					vertical-align: super;
+					font-weight: inherit;
+				}
+			}
 		}
 	}
 }
@@ -1570,6 +1640,28 @@ select.echo-form-field,
 				}
 			}
 		}
+	}
+}
+
+.back-to-search {
+	display: inline-block;
+	text-decoration: none;
+	color: $copy-color;
+	font-family: $kanit;
+	font-weight: 400;
+
+	span {
+		display: inline-block;
+		background-color: $red;
+		color: white;
+		line-height: 12px;
+		width: 12px;
+		text-align: center;
+		font-weight: bold;
+		border-radius: 100px;
+		font-size: 8px;
+		vertical-align: middle;
+		margin-right: 6px;
 	}
 }
 

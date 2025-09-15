@@ -48,6 +48,17 @@ get_header( 'shop' ); ?>
 	?>
 
 	<?php
+		echo '<div class="echo-block echo-block-contact_form">';
+		// page title
+		$args = array(
+			'title' => 'Product Enquiry Form',
+			'form' => get_post(274)
+		);
+		get_template_part( 'template-parts/partials/acf/blocks/block-contact_form', '', $args );
+		echo '</div>';
+	?>
+
+	<?php
 		/**
 		 * woocommerce_sidebar hook.
 		 *

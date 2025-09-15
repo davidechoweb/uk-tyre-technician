@@ -87,6 +87,20 @@ if ( woocommerce_product_loop() ) {
  */
 do_action( 'woocommerce_after_main_content' );
 
+?>
+
+<?php
+	echo '<div class="echo-block echo-block-contact_form">';
+	// page title
+	$args = array(
+		'title' => 'Get in touch',
+		'form' => get_post(274)
+	);
+	get_template_part( 'template-parts/partials/acf/blocks/block-contact_form', '', $args );
+	echo '</div>';
+?>
+
+<?php
 /**
  * Hook: woocommerce_sidebar.
  *

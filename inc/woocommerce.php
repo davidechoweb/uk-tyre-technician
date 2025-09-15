@@ -65,6 +65,7 @@ if ( ! function_exists( 'understrap_woocommerce_wrapper_start' ) ) {
 		if ( is_shop() || is_product_taxonomy() ) {
 			echo '<main class="col-md-8 site-main" id="product-archive">';
 		} else {
+			echo '<div class="mb-5"><a class="back-to-search" href="' . get_permalink( wc_get_page_id( 'shop' ) ) . '"><span>&#x276E;</span>Back to search</a></div>';
 			echo '<main class="col-md-12 site-main" id="product-archive">';
 		}
 	}
@@ -467,5 +468,64 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 add_action( 'woocommerce_single_product_summary', 'html_below_product_title', 6 );
 function html_below_product_title() {
 	global $product;
-    echo '<div class="serial-number">Serial No: ' . get_field( 'tyre_details', $product->get_id() )['serial_number'] . '</div>';
+    echo '<div class="serial-number mb-3">Serial No: ' . get_field( 'tyre_details', $product->get_id() )['serial_number'] . '</div>';
 }
+
+// remove price on single product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+
+// Add +/- buttons around quantity input
+add_action( 'woocommerce_after_quantity_input_field', 'custom_quantity_plus' );
+function custom_quantity_plus() {
+	if ( is_product() ) {
+    	echo '<button type="button" class="qty-button plus">+</button>';
+	}
+}
+
+add_action( 'woocommerce_before_quantity_input_field', 'custom_quantity_minus' );
+function custom_quantity_minus() {
+	if ( is_product() ) {
+    	echo '<button type="button" class="qty-button minus">-</button>';
+	}
+}
+
+// Add inline script for WooCommerce quantity +/- buttons
+add_action( 'wp_enqueue_scripts', function() {
+    if ( is_product() ) {
+        // make sure jQuery is loaded
+        wp_enqueue_script( 'jquery' );
+
+        $script = <<<JS
+        jQuery(document).ready(function($) {
+            $(document).on('click', '.qty-button', function() {
+                var \$qty = $(this).closest('.quantity').find('.qty');
+                var currentVal = parseFloat(\$qty.val());
+                var max = parseFloat(\$qty.attr('max'));
+                var min = parseFloat(\$qty.attr('min'));
+                var step = parseFloat(\$qty.attr('step')) || 1;
+
+                if ($(this).hasClass('plus')) {
+                    if (!isNaN(max) && currentVal >= max) {
+                        \$qty.val(max);
+                    } else {
+                        \$qty.val(currentVal + step);
+                    }
+                } else {
+                    if (!isNaN(min) && currentVal <= min) {
+                        \$qty.val(min);
+                    } else if (currentVal > 0) {
+                        \$qty.val(currentVal - step);
+                    }
+                }
+
+                \$qty.trigger('change');
+            });
+        });
+        JS;
+
+        wp_add_inline_script( 'jquery', $script );
+    }
+});
+
+// Remove product meta (SKU, categories, tags) on single product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );

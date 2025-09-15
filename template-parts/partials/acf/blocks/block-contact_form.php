@@ -12,7 +12,9 @@
     <div class="container">
         <div class="row justify-content-between align-items-center mb-5">
             <div class="col-12 col-sm-6 text-center text-sm-start">
-                <h2 class="h2 mb-3 mb-sm-0">Get in touch</h2>
+                <?php if ($args['title']) : ?>
+                <h2 class="h2 mb-3 mb-sm-0"><?php echo $args['title']; ?></h2>
+                <?php endif; ?>
             </div>
             <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-end">
                 <p class="logo-24-7 mb-0">

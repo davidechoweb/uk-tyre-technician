@@ -21,7 +21,13 @@ get_header();
     <div>
         <main id="primary">
             <?php
-                get_template_part( 'renderer' );
+                if ( is_cart() ) {
+                    echo do_shortcode( '[woocommerce_cart]' );
+                } elseif ( is_checkout() ) {
+                    echo do_shortcode( '[woocommerce_checkout]' );
+                } else {
+                    get_template_part( 'renderer' );
+                }
             ?>
             <div hidden class="page-schema"><?php echo get_field('page_schema', $post->ID) ?></div>
         </main><!-- #main -->
