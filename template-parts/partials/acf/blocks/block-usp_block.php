@@ -22,3 +22,36 @@
         ]);
     ?>
 </div>
+
+<script>
+    jQuery(document).ready(function($) {
+
+        function setEqualHeight() {
+            var maxHeight = 0;
+            var $items = $('.usp-list li');
+
+            // reset heights first
+            $items.css('height', 'auto');
+
+            // find max height
+            $items.each(function() {
+                var thisHeight = $(this).outerHeight();
+                if (thisHeight > maxHeight) {
+                    maxHeight = thisHeight;
+                }
+            });
+
+            // apply max height to all
+            $items.css('height', maxHeight + 'px');
+        }
+
+        // Run on load
+        setEqualHeight();
+
+        // Run on resize
+        $(window).on('resize', function() {
+            setEqualHeight();
+        });
+
+    });
+</script>

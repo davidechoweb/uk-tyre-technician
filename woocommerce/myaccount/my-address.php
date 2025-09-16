@@ -55,7 +55,7 @@ $col    = 1;
 
 	<?php $address = wc_get_account_formatted_address( $name ); ?>
 
-	<div class="u-column woocommerce-Address">
+	<div class="u-column woocommerce-Address echo-form-box mb-4">
 		<header class="woocommerce-Address-title title">
 			<h3><?php echo esc_html( $address_title ); ?></h3>
 			<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?></a>

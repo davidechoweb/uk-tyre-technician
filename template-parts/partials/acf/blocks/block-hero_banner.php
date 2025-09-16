@@ -18,7 +18,7 @@
         <?php endif; ?>
 
         <?php if ( $args['cta'] ) : ?>
-        <a class="echo-button--white" href="<?php echo $args['cta']['url']; ?>" target="_blank"><?php echo $args['cta']['title']; ?></a>
+        <a class="echo-button--white" href="<?php echo $args['cta']['url']; ?>" target="<?php echo $args['cta']['target']; ?>"><?php echo $args['cta']['title']; ?></a>
         <?php endif; ?>
     </div>
     <img class="bg-img echo-object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/images/hero-banner.png" alt="Hero banner background image">

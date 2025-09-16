@@ -27,7 +27,7 @@
                     width: 100%;
 
                     @include media-breakpoint-up(xl) {
-                        width: auto;
+                        width: 33.33%;
                     }
 
                     &:not(:last-child) {
@@ -84,6 +84,7 @@
                         display: block;
                         background-color: $red;
                         clip-path: polygon(0 0, 100% 0%, 97% 100%, 0% 100%);
+                        height: 100%;
 
                         @include media-breakpoint-up(xl) {
                             padding: 20px 30px 20px 50px;

@@ -37,8 +37,8 @@ $theme_options = get_fields('option');
 			</div>
 			<div class="header-right d-flex align-items-center">
 				<?php echo do_shortcode('[aws_search_form]'); ?>
-				<a class="my-account-btn echo-button--blue ms-3" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">Login/Register</a>
-				<a href="#" class="login-link ms-3"><span class="icon icon-login"></span></a>
+				<a class="my-account-btn echo-button--blue ms-3" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><?php echo is_user_logged_in() ? 'My Account' : 'Login/Register'; ?></a>
+				<!-- <a href="#" class="login-link ms-3"><span class="icon icon-login"></span></a> -->
 				<div class="mini-basket ms-3">
 					<span class="mini-basket-label">BASKET / £0.00</span>
 					<span class="icon icon-basket ms-1"></span>

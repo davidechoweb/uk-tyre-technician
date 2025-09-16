@@ -53,7 +53,7 @@ if ( ! function_exists( 'understrap_woocommerce_wrapper_start' ) ) {
 			$container = '';
 		}
 
-		echo '<div class="wrapper echo-block" id="woocommerce-wrapper">';
+		echo '<div class="echo-block" id="woocommerce-wrapper">';
 		echo '<div>';
 		echo '<div class="' . esc_attr( $container ) . '" id="content" tabindex="-1">';
 		echo '<div class="row">';
@@ -529,3 +529,120 @@ add_action( 'wp_enqueue_scripts', function() {
 
 // Remove product meta (SKU, categories, tags) on single product page
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+// cart page wrapper
+add_action( 'woocommerce_before_cart', function() {
+    echo '<div class="my-cart-outer-wrapper">';
+});
+
+add_action( 'woocommerce_after_cart', function() {
+    echo '</div>';
+});
+
+// add class to billing fields
+function custom_add_class_to_all_my_account_billing_fields( $fields ) {
+    // Loop through each billing field
+    foreach ( $fields as $field_key => $field ) {
+        // Add custom class to the field wrapper
+        // $fields[ $field_key ]['class'][] = 'my-account-billing-class';
+        
+        // Add custom class to the input element
+        $fields[ $field_key ]['input_class'][] = 'echo-form-field';
+    }
+    
+    return $fields;
+}
+add_filter( 'woocommerce_billing_fields', 'custom_add_class_to_all_my_account_billing_fields' );
+
+// add class to shipping fields
+function custom_add_class_to_all_my_account_shipping_fields( $fields ) {
+    // Loop through each billing field
+    foreach ( $fields as $field_key => $field ) {
+        // Add custom class to the field wrapper
+        // $fields[ $field_key ]['class'][] = 'my-account-billing-class';
+        
+        // Add custom class to the input element
+        $fields[ $field_key ]['input_class'][] = 'echo-form-field';
+    }
+    
+    return $fields;
+}
+add_filter( 'woocommerce_shipping_fields', 'custom_add_class_to_all_my_account_shipping_fields' );
+
+// add_filter('woocommerce_form_field', 'add_custom_class_to_password_field', 10, 4);
+// function add_custom_class_to_password_field($field, $key, $args, $value) {
+//     // Check if the field is a password field
+//     if ($args['type'] === 'password') {
+//         // Add a custom class
+//         $args['input_class'][] = 'echo-form-field';
+//         $field = woocommerce_form_field($key, $args, $value);
+//     }
+//     return $field;
+// }
+
+add_filter('woocommerce_checkout_fields', 'add_class_to_order_comments');
+function add_class_to_order_comments($fields) {
+    // Add custom class to order_comments textarea
+    $fields['order']['order_comments']['input_class'][] = 'echo-form-field';
+    
+    return $fields;
+}
+
+/**************************************** woocommerce product tabs */
+// Add/remove product tabs
+add_filter( 'woocommerce_product_tabs', 'my_acf_product_tabs', 98 );
+function my_acf_product_tabs( $tabs ) {
+    // Remove the default description tab
+    unset( $tabs['description'] );
+
+	$tabs['information_tab'] = array(
+		'title'    => __( 'Information', 'uk-tyre' ),
+		'priority' => 40,
+		'callback' => 'information_tab_content'
+	);
+
+	$tabs['collection_tab'] = array(
+		'title'    => __( 'Collection', 'uk-tyre' ),
+		'priority' => 50,
+		'callback' => 'collection_tab_content'
+	);
+
+	$tabs['delivery_tab'] = array(
+		'title'    => __( 'Delivery', 'uk-tyre' ),
+		'priority' => 60,
+		'callback' => 'delivery_tab_content'
+	);
+
+	$tabs['secure_payments_tab'] = array(
+		'title'    => __( 'Secure Payments', 'uk-tyre' ),
+		'priority' => 70,
+		'callback' => 'secure_payments_tab_content'
+	);
+
+    return $tabs;
+}
+
+function information_tab_content() {
+    global $product;
+    $extra_info = get_field( 'extra_info', $product->get_id() );
+    if ( $extra_info ) {
+        echo '<div class="acf-extra-info">';
+        echo $extra_info; // Will keep HTML formatting from WYSIWYG field
+        echo '</div>';
+    }
+}
+
+function collection_tab_content() {
+    $theme_options = get_fields('option');
+	echo $theme_options['collection'];
+}
+
+function delivery_tab_content() {
+    $theme_options = get_fields('option');
+	echo $theme_options['delivery'];
+}
+
+function secure_payments_tab_content() {
+    $theme_options = get_fields('option');
+	echo $theme_options['secure_payments'];
+}

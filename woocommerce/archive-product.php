@@ -19,6 +19,32 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
+$theme_options = get_fields('option');
+
+?>
+
+<section class="echo-block remove_bottom_spacing_1">
+	<div class="padding-normal">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-xl-6">
+					<h2 class="h2">NEW & USED TYRES</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</p>
+					<div class="mt-3">
+					<a href="/24hr-breakdown-service" class="echo-button--blue">Get in touch</a><br><br>
+					<a href="tel:<?php echo $theme_options['contact_details']['contact_number']; ?>" class="echo-button--green">Call us</a>
+					</div>
+				</div>
+				<div class="col-12 col-xl-6 mt-3 mt-xl-0">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/shop-tyre-image.jpg" alt="New & Used Tyres">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<?php
+
 /**
  * Hook: woocommerce_before_main_content.
  *

@@ -550,13 +550,13 @@ h5, .h5 {
 /**************************************/
 .echo-button {
 	color: white;
-	font-size: 18px;
+	@include fluid-type($min_width, $max_width, 16px, 18px);
 	font-family: $kanit;
 	font-weight: 500;
 	font-style: italic;
 	border-radius: 50px;
 	text-decoration: none;
-	padding: 5px 50px;
+	padding: 5px 25px;
 	min-height: 40px;
 	transition: all 0.3s;
 	border: 1px solid;
@@ -564,6 +564,10 @@ h5, .h5 {
 	display: inline-block;
 	text-align: center;
 	text-transform: uppercase;
+
+	@include media-breakpoint-up(xl) {
+		padding: 5px 50px;
+	}
 
 	&--blue {
 		@extend .echo-button;
@@ -807,11 +811,58 @@ h5, .h5 {
     object-position: center;
 }
 
-.echo-block > div {
-	padding: 40px 0;
+.echo-block {
+	> div {
+		padding: 40px 0;
 
-	@include media-breakpoint-up(md) {
-		padding: 80px 0;
+		@include media-breakpoint-up(md) {
+			padding: 80px 0;
+		}
+	}
+
+	&.remove_top_spacing_1 {
+		> div {
+			padding-top: 0;
+		}
+	}
+
+	&.remove_bottom_spacing_1 {
+		> div {
+			padding-bottom: 0;
+		}
+	}
+}
+
+.echo-block-content_rows {
+	.echo-block {
+		> div {
+			padding: 0 !important;
+		}
+	}
+}
+
+.contact-number-shortcode {
+	a {
+		font-family: $kanit;
+		color: $copy-color;
+		text-decoration: none;
+		@include fluid-type($min_width, $max_width, 32px, 42px);
+		font-weight: 600;
+		display: table;
+		align-items: center;
+
+		img {
+			width: 50px;
+			margin-right: 15px;
+
+			@include media-breakpoint-up(sm) {
+				width: 70px;
+			}
+		}
+
+		span {
+			vertical-align: middle;
+		}
 	}
 }
 
@@ -848,45 +899,77 @@ select.echo-form-field + .select2-container,
 .echo-form-field input[type=number],
 .echo-form-field input[type=file],
 .echo-form-field textarea,
-.echo-form-field select {
-	border: 2px solid $red;
-    min-height: 48px;
-    border-radius: 25px;
-    padding: 10px 25px;
-	color: black;
-	font-family: $kanit;
+.echo-form-field select,
+select.echo-form-field + .select2-container,
+//wc table
+.woocommerce table.cart input[type=text].echo-form-field,
+.woocommerce table.cart input[type=password].echo-form-field,
+.woocommerce table.cart input[type=email].echo-form-field,
+.woocommerce table.cart input[type=tel].echo-form-field,
+.woocommerce table.cart input[type=number].echo-form-field,
+.woocommerce table.cart textarea.echo-form-field,
+.woocommerce table.cart select.echo-form-field,
+.woocommerce table.cart select.echo-form-field + .select2-container {
+	border: 2px solid $red !important;
+    min-height: 48px !important;
+    border-radius: 25px !important;
+    padding: 10px 25px !important;
+	color: black !important;
+	font-family: $kanit !important;
 	@include fluid-type($min_width, $max_width, 16px, 18px);
+	font-style: italic;
 
 	&::placeholder {
-		color: black;
-		opacity: 1; /* Firefox */
+		color: black !important;
+		opacity: 1 !important; /* Firefox */
 	}
 
 	&::-ms-input-placeholder { /* Edge 12 -18 */
-		color: black;
+		color: black !important;
 	}
 }
 
 textarea.echo-form-field,
 .echo-form-field textarea {
-	height: 150px;
+	height: 150px !important;
 }
 
 select.echo-form-field,
 .echo-form-field select {
-	background-image: url(../images/icon-arrow-down.png);
-	background-repeat: no-repeat;
-	background-position: right 15px center;
-	background-size: 15px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	padding-right: 40px;
-	background-position: right 25px center;
-	background-size: 15px;
+	background-image: url(../images/icon-arrow-down.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: right 15px center !important;
+	background-size: 15px !important;
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	appearance: none !important;
+	padding-right: 40px !important;
+	background-position: right 25px center !important;
+	background-size: 15px !important;
 
 	option {
-		color: $copy-color;
+		color: $copy-color !important;
+	}
+}
+
+select.echo-form-field, select.wwlc_form_field {
+	+ .select2-container {
+		background-color: white;
+
+		.select2-selection {
+			border: 0;
+			background-color: transparent !important;
+			margin-bottom: 1px !important;
+		}
+
+		.select2-selection__arrow {
+			top: 2px;
+			right: 15px;
+		}
+
+		.select2-selection__rendered {
+			padding: 0;
+		}
 	}
 }
 
@@ -1035,6 +1118,15 @@ select.echo-form-field,
 		&:hover {
 			text-decoration: none;
 		}
+	}
+}
+
+.echo-form-box {
+	background-color: #f7f7f7;
+	padding: 20px 20px;
+
+	@include media-breakpoint-up(xl) {
+		padding: 40px 40px;
 	}
 }
 
@@ -1666,6 +1758,96 @@ select.echo-form-field,
 }
 
 /**************************************/
+/* !- Single Product                  */
+/**************************************/
+.woocommerce {
+	div.product {
+		.woocommerce-tabs {
+			padding-top: 40px;
+
+			@include media-breakpoint-up(xl) {
+				padding-top: 80px;
+			}
+
+			.wc-tabs-title {
+				text-align: center;
+				color: $blue;
+				font-family: $kanit;
+				font-style: italic;
+				font-weight: 300;
+				position: relative;
+				@include fluid-type($min_width, $max_width, 18px, 21px);
+				text-transform: uppercase;
+
+				span {
+					display: inline-block;
+					padding: 0 20px;
+					background-color: white;
+					position: relative;
+					z-index: 1;
+
+					@include media-breakpoint-up(xl) {
+						padding: 0 40px;
+					}
+				}
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
+					height: 1px;
+					background-color: $blue;
+				}
+			}
+
+			ul.tabs {
+				padding: 0;
+				display: flex;
+				background-color: #D6D6D6;
+				border-radius: 25px;
+
+				&::before {
+					display: none !important;
+				}
+
+				li {
+					border: 0;
+					border-radius: 25px;
+					background: none;
+					flex: 1;
+					padding: 0;
+
+					&.active {
+						background-color: $blue;
+
+						a {
+							color: white;
+						}
+					}
+
+					a {
+						width: 100%;
+						text-align: center;
+						text-transform: uppercase;
+						font-family: $kanit;
+						color: $copy-color;
+					}
+
+					&::before, &::after {
+						display: none !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+/**************************************/
 /* !- Utility                         */
 /**************************************/
 .echo-object-fit-cover {
@@ -1698,6 +1880,18 @@ select.echo-form-field,
 	}
 }
 
+.text-red {
+	color: $red;
+
+	* {
+		color: $red;
+	}
+}
+
+.bg-light-gray {
+	background-color: #F7F7F7;
+}
+
 .woocommerce {
 	.woocommerce-pagination {
 		.page-numbers {
@@ -1722,6 +1916,251 @@ select.echo-form-field,
 					}
 				}
 			}
+		}
+	}
+}
+
+/**************************************/
+/* !WC Components                     */
+/**************************************/
+// wholesale price
+.woocommerce {
+	.price {
+		.original-computed-price {
+			opacity: 0.5;
+			text-decoration: none;
+
+			.amount {
+				bdi {
+					text-decoration: line-through;
+				}
+			}
+
+			small {
+				text-decoration: line-through;
+				font-weight: normal;
+			}
+		}
+
+		.wholesale_price_container {
+			margin: 20px 0;
+
+			.wholesale_price_title {
+				display: block;
+				color: $copy-color;
+			}
+		}
+	}
+}
+
+.woocommerce {
+	// .price {
+	// 	display: block;
+
+	// 	.amount {
+	// 		font-size: 20px;
+	// 		color: $red;
+	// 		font-weight: 900;
+
+	// 		@media screen and (min-width:960px) {
+	// 			font-size: 32px;
+	// 		}
+	// 	}
+
+	// 	.woocommerce-price-suffix {
+	// 		color: $copy-color;
+	// 		font-size: 16px;
+	// 		margin-left: 5px;
+	// 	}
+	// }
+
+	// my account page
+	.myaccount-nav {
+		.woocommerce-MyAccount-navigation {
+			float: none;
+			width: auto;
+
+			.list-group {
+				a {
+					border: 0;
+					border-radius: 0;
+					background-color: $blue;
+					color: white;
+					padding: 14px 14px;
+
+					&:hover, &.active {
+						background-color: $red;
+					}
+				}
+			}
+		}
+	}
+
+	.myaccount-content {
+		.woocommerce-MyAccount-content {
+			float: none;
+			width: auto;
+		}
+	}
+
+	.woocommerce-info,
+	.woocommerce-message {
+		&:not(.wcwl_notice) {
+			border: 0;
+			border-radius: 0;
+			background-color: #f7f7f7;
+			display: flex;
+			align-items: center;
+		}
+
+		a {
+			margin-left: 20px;
+			min-width: 105px;
+		}
+
+		.btn {
+			@extend .echo-button;
+			order: 1;
+		}
+
+		&::before {
+			top: auto;
+		}
+	}
+
+	table.shop_table {
+		border: 0;
+		border-spacing: 0;
+		background-color: #f7f7f7;
+		border-radius: 0;
+
+		th, td {
+			// border-top: 0;
+			padding: 15px 20px;
+		}
+
+		// tbody {
+		// 	tr:nth-child(odd) {
+		// 		background-color: #d9e8ff;
+		// 	}
+		// }
+	}
+
+	// .woocommerce-checkout #payment {
+	// 	background-color: $light-blue;
+	// }
+
+	.ppc-button-wrapper {
+		min-width: 0;
+		margin: 20px auto 0;
+		max-width: 750px;
+	}
+
+	.woocommerce-account-fields {
+		.create-account {
+			input[type=password] {
+				border: 2px solid #2763b0;
+				padding: 7px 25px;
+				border-radius: 25px;
+				font-size: 16px;
+			}
+		}
+	}
+
+	// &.parent-category-home-care {
+	// 	.page-title {
+	// 		background-color: #13be9c!important;
+	// 	}
+	// }
+
+	// &.parent-category-garden-outdoor {
+	// 	.page-title {
+	// 		background-color: #43a731!important;
+	// 	}
+	// }
+
+	// &.parent-category-wood-furniture-care-2 {
+	// 	.page-title {
+	// 		background-color: #ff8e2e!important;
+	// 	}
+	// }
+
+	// &.parent-category-pest-control-parent {
+	// 	.page-title {
+	// 		background-color: #4e1d80!important;
+	// 	}
+	// }
+}
+
+// .faq-accordion {
+// 	li {
+// 		.h3 {
+// 			border-bottom: 2px solid $red;
+// 			padding-bottom: 20px;
+// 			margin-bottom: 20px;
+// 			position: relative;
+// 			font-size: 20px;
+// 			color: $blue;
+
+// 			@media screen and (min-width:960px) {
+// 				font-size: 24px;
+// 			}
+
+// 			&::before {
+// 				display: none;
+// 			}
+
+// 			&::after {
+// 				position: absolute;
+// 				content: '\e909';
+// 				font-family: 'icomoon';
+// 				position: absolute;
+// 				color: white;
+// 				background-color: $blue;
+// 				width: 30px;
+// 				height: 30px;
+// 				font-size: 9px;
+// 				text-align: center;
+// 				line-height: 33px;
+// 				border-radius: 100px;
+// 				right: 0;
+// 				top: 5px;
+// 			}
+// 		}
+
+// 		&.uk-open {
+// 			.h3 {
+// 				&::after {
+// 					transform: rotate(180deg);
+// 				}
+// 			}
+// 		}
+
+// 		.uk-accordion-content {
+// 			margin-top: 0;
+// 		}
+// 	}
+// }
+
+.he-list {
+	li {
+		padding-left: 35px;
+		position: relative;
+
+		&::before {
+			content: '\e930';
+			font-family: 'icomoon';
+			position: absolute;
+			background-color: $blue;
+			width: 18px;
+			height: 18px;
+			text-align: center;
+			line-height: 20px;
+			font-size: 11px;
+			color: white;
+			border-radius: 100px;
+			top: 5px;
+			left: 0;
 		}
 	}
 }

@@ -44,3 +44,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 foreach ( $echo_theme_includes as $file ) {
 	require_once get_theme_file_path( $echo_theme_inc_dir . $file );
 }
+
+// Contact number shortcode
+function my_contact_number_shortcode() {
+    // You can output any HTML here
+    $html = '<div class="contact-number-shortcode">';
+    $html .= '<a href="tel:01476 401571"><img src="'.get_template_directory_uri().'/images/tel-icon.svg"><span>01476 401571</span></a>';
+    $html .= '</div>';
+
+    return $html;
+}
+add_shortcode( 'contact_number', 'my_contact_number_shortcode' );

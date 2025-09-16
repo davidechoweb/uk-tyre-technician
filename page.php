@@ -22,9 +22,29 @@ get_header();
         <main id="primary">
             <?php
                 if ( is_cart() ) {
-                    echo do_shortcode( '[woocommerce_cart]' );
+                    echo '<section class="echo-block">';
+                        echo '<div class="basket-block">';
+                            echo '<div class="container">';
+                                echo do_shortcode( '[woocommerce_cart]' );
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</section>';
                 } elseif ( is_checkout() ) {
-                    echo do_shortcode( '[woocommerce_checkout]' );
+                    echo '<section class="echo-block">';
+                        echo '<div class="checkout-block">';
+                            echo '<div class="container">';
+                                echo do_shortcode( '[woocommerce_checkout]' );
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</section>';
+                 } elseif ( is_account_page() ) {
+                    echo '<section class="echo-block">';
+                        echo '<div class="checkout-block">';
+                            echo '<div class="container">';
+                                echo do_shortcode( '[woocommerce_my_account]' );
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</section>';
                 } else {
                     get_template_part( 'renderer' );
                 }
