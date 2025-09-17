@@ -1524,8 +1524,19 @@ select.echo-form-field, select.wwlc_form_field {
 
 	.product {
 		.entry-summary {
-			.serial-number {
+			.brand-logo {
+				max-height: 43px;
+			}
+
+			.tyre-size {
 				@include fluid-type($min_width, $max_width, 16px, 18px);
+				font-family: $kanit;
+				color: #7C7C7C;
+				font-weight: 300;
+			}
+
+			.serial-number {
+				@include fluid-type($min_width, $max_width, 14px, 16px);
 				font-family: $kanit;
 				color: #7C7C7C;
 			}
@@ -1807,9 +1818,12 @@ select.echo-form-field, select.wwlc_form_field {
 
 			ul.tabs {
 				padding: 0;
-				display: flex;
 				background-color: #D6D6D6;
 				border-radius: 25px;
+
+				@include media-breakpoint-up(sm) {
+					display: flex;
+				}
 
 				&::before {
 					display: none !important;
@@ -1821,6 +1835,8 @@ select.echo-form-field, select.wwlc_form_field {
 					background: none;
 					flex: 1;
 					padding: 0;
+					display: flex !important;
+					align-items: center;
 
 					&.active {
 						background-color: $blue;
@@ -1836,10 +1852,85 @@ select.echo-form-field, select.wwlc_form_field {
 						text-transform: uppercase;
 						font-family: $kanit;
 						color: $copy-color;
+						@include fluid-type($min_width, $max_width, 16px, 18px);
+						padding: 14px 15px 13px;
 					}
 
 					&::before, &::after {
 						display: none !important;
+					}
+				}
+			}
+
+			.product-information-table {
+				width: 100%;
+				border: 1px solid $blue;
+
+				th, td {
+					padding: 8px 8px;
+					min-height: 60px;
+					width: 20%;
+
+					@include media-breakpoint-up(xl) {
+						padding: 15px 20px;
+					}
+				}
+
+				th {
+					background-color: $blue;
+					color: white;
+					font-family: $kanit;
+					text-transform: uppercase;
+					font-style: italic;
+					@include fluid-type($min_width, $max_width, 16px, 20px);
+
+					&:not(:last-child) {
+						border-right: 1px solid white;
+					}
+				}
+
+				td {
+					@include fluid-type($min_width, $max_width, 16px, 20px);
+					font-family: $kanit;
+					color: $blue;
+					font-style: italic;
+
+					&:not(:last-child) {
+						border-right: 1px solid $blue;
+					}
+				}
+
+				&.desktop {
+					display: none;
+					text-align: center;
+
+					@include media-breakpoint-up(sm) {
+						display: table;
+					}
+				}
+
+				&.mobile {
+					display: table;
+					text-align: left;
+
+					@include media-breakpoint-up(sm) {
+						display: none;
+					}
+
+					th {
+						border-bottom: 1px solid white;
+					}
+
+					td {
+						border-bottom: 1px solid $blue;
+					}
+
+					tr {
+						&:last-child {
+							th, td {
+								border-bottom: 0;
+							}
+						}
 					}
 				}
 			}

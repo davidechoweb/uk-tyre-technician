@@ -22,7 +22,7 @@
         <?php if ( $args['usp'] ) : ?>
         <div class="usps row">
             <?php foreach ( $args['usp'] as $usp ) : ?>
-            <div class="usp col-6 col-md-3 text-center">
+            <div class="usp col-6 col-md-4 text-center">
                 <?php
                     echo wp_get_attachment_image( $usp['icon']['ID'], '', false, [
                         'loading'  => 'lazy',
@@ -30,7 +30,7 @@
                         'class' => 'mb-3'
                     ]);
                 ?>
-                <p class="usp-label fst-italic mb-0"><?php echo $usp['label'] ?></p>
+                <p class="usp-label fst-italic mb-0 fw-bold"><?php echo $usp['label'] ?></p>
             </div>
             <?php endforeach; ?>
         </div>

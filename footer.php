@@ -98,7 +98,8 @@ function get_menu_name($id) {
 					</div>
 					<div class="copyright-section">
 						<p class="copyright text-white">© <?php echo date('Y') ?> UK TYRE TECHNICIAN</p>
-						<p class="mb-0 bottom-links"><a href="#">Privacy Policy</a><span class="divider">|</span><a href="#">Use of Cookies</a><span class="divider">|</span><a href="#">Terms of Use</a></p>
+						<p class="bottom-links"><a href="/privacy-policy">Privacy Policy</a><span class="divider">|</span><a href="/cookie-policy">Use of Cookies</a><!--<span class="divider"> |</span><a href="#">Terms of Use</a> --></p>
+						<p class="text-white">Web design by <a href="https://www.echowebsolutions.co.uk/web-design-peterborough/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/echo-logo.svg" alt="Echo" style="vertical-align: baseline;"></a></p>
 					</div>
 				</div>
 				<div class="contact-column col-12 col-sm-2">

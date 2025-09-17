@@ -464,6 +464,25 @@ function custom_woocommerce_placeholder_img( $image_html ) {
 // remove related product
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
+// Add custom HTML top the product title on single product page
+add_action( 'woocommerce_single_product_summary', 'html_top_product_title', 4 );
+function html_top_product_title() {
+	global $product;
+
+	$brand = wp_get_post_terms( $product->get_id(), 'product_brand' );
+
+	if ( ! empty( $brand ) && ! is_wp_error( $brand ) ) {
+		$brand_id = $brand[0]->term_id;
+		$thumbnail_id = get_term_meta( $brand_id, 'thumbnail_id', true );
+		if ( $thumbnail_id ) {
+			$brand_image_url = wp_get_attachment_url( $thumbnail_id );
+			echo '<img class="brand-logo mb-2" src="' . esc_url( $brand_image_url ) . '" alt="' . esc_attr( $brand[0]->name ) . '">';
+		}
+	}
+
+    echo '<p class="tyre-size mb-0">' . get_field('tyre_size',$product->get_id())['tread_section_width_mm'] . ' - ' . get_field('tyre_size',$product->ID)['rim_size_diameter_inches'] . 'R</p>';
+}
+
 // Add custom HTML below the product title on single product page
 add_action( 'woocommerce_single_product_summary', 'html_below_product_title', 6 );
 function html_below_product_title() {
@@ -624,12 +643,113 @@ function my_acf_product_tabs( $tabs ) {
 
 function information_tab_content() {
     global $product;
-    $extra_info = get_field( 'extra_info', $product->get_id() );
-    if ( $extra_info ) {
-        echo '<div class="acf-extra-info">';
-        echo $extra_info; // Will keep HTML formatting from WYSIWYG field
-        echo '</div>';
-    }
+
+	$tyre_details = get_field('tyre_details',$product->get_id());
+	$part_worn = get_field('part_worn',$product->get_id());
+	$tyre_size = get_field('tyre_size',$product->get_id());
+
+    ob_start();
+    ?>
+    <table class="product-information-table desktop">
+        <tr>
+            <th>Pattern</th>
+            <th>Load Rating</th>
+            <th>Speed Rating</th>
+            <th>Serial Number</th>
+            <th>Dot Code</th>
+        </tr>
+        <tr>
+            <td><?php echo $tyre_details['pattern']; ?></td>
+            <td><?php echo $tyre_details['load_rating']; ?></td>
+            <td><?php echo $tyre_details['speed_rating']; ?></td>
+            <td><?php echo $tyre_details['serial_number']; ?></td>
+            <td><?php echo $tyre_details['dot_code']; ?></td>
+        </tr>
+        <tr>
+            <th>Tread Depth Remaining</th>
+            <th>Re-Cut (Y/N)</th>
+            <th>Pressure Test Result</th>
+            <th>Test Number</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><?php echo $part_worn['tread_depth_remaining']; ?></td>
+            <td><?php echo $part_worn['re-cut_yn']; ?></td>
+            <td><?php echo $part_worn['pressure_test_result']; ?></td>
+            <td><?php echo $part_worn['test_number']; ?></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Tread Section Width (mm)</th>
+            <th>Profile (Aspect Ratio)</th>
+            <th>Radial or Cross Ply</th>
+            <th>Rim Size (Diameter Inches)</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><?php echo $tyre_size['tread_section_width_mm']; ?></td>
+            <td><?php echo $tyre_size['profile_aspect_ratio']; ?></td>
+            <td><?php echo $tyre_size['radial_or_cross_ply']; ?></td>
+            <td><?php echo $tyre_size['rim_size_diameter_inches']; ?></td>
+            <td></td>
+        </tr>
+    </table>
+	<table class="product-information-table mobile">
+		<tr>
+			<th>Pattern</th>
+			<td><?php echo $tyre_details['pattern']; ?></td>
+		</tr>
+		<tr>
+			<th>Load Rating</th>
+			<td><?php echo $tyre_details['load_rating']; ?></td>
+		</tr>
+		<tr>
+			<th>Speed Rating</th>
+			<td><?php echo $tyre_details['speed_rating']; ?></td>
+		</tr>
+		<tr>
+			<th>Serial Number</th>
+			<td><?php echo $tyre_details['serial_number']; ?></td>
+		</tr>
+		<tr>
+			<th>Dot Code</th>
+			<td><?php echo $tyre_details['dot_code']; ?></td>
+		</tr>
+		<tr>
+			<th>Tread Depth Remaining</th>
+			<td><?php echo $part_worn['tread_depth_remaining']; ?></td>
+		</tr>
+		<tr>
+			<th>Re-Cut (Y/N)</th>
+			<td><?php echo $part_worn['re-cut_yn']; ?></td>
+		</tr>
+		<tr>
+			<th>Pressure Test Result</th>
+			<td><?php echo $part_worn['pressure_test_result']; ?></td>
+		</tr>
+		<tr>
+			<th>Test Number</th>
+			<td><?php echo $part_worn['test_number']; ?></td>
+		</tr>
+		<tr>
+			<th>Tread Section Width (mm)</th>
+			<td><?php echo $tyre_size['tread_section_width_mm']; ?></td>
+		</tr>
+		<tr>
+			<th>Profile (Aspect Ratio)</th>
+			<td><?php echo $tyre_size['profile_aspect_ratio']; ?></td>
+		</tr>
+		<tr>
+			<th>Radial or Cross Ply</th>
+			<td><?php echo $tyre_size['radial_or_cross_ply']; ?></td>
+		</tr>
+		<tr>
+			<th>Rim Size (Diameter Inches)</th>
+			<td><?php echo $tyre_size['rim_size_diameter_inches']; ?></td>
+		</tr>
+    </table>
+    <?php
+    echo ob_get_clean();
 }
 
 function collection_tab_content() {

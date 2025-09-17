@@ -433,12 +433,14 @@ legend {
   padding: 0;
   margin-bottom: 0.5rem;
   font-size: calc(1.275rem + 0.3vw);
-  line-height: inherit;
 }
 @media (min-width: 1200px) {
   legend {
     font-size: 1.5rem;
   }
+}
+legend {
+  line-height: inherit;
 }
 legend + * {
   clear: left;
@@ -512,68 +514,80 @@ progress {
 
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
-  font-weight: 300;
-  line-height: 1.2;
 }
 @media (min-width: 1200px) {
   .display-1 {
     font-size: 5rem;
   }
 }
+.display-1 {
+  font-weight: 300;
+  line-height: 1.2;
+}
 
 .display-2 {
   font-size: calc(1.575rem + 3.9vw);
-  font-weight: 300;
-  line-height: 1.2;
 }
 @media (min-width: 1200px) {
   .display-2 {
     font-size: 4.5rem;
   }
 }
+.display-2 {
+  font-weight: 300;
+  line-height: 1.2;
+}
 
 .display-3 {
   font-size: calc(1.525rem + 3.3vw);
-  font-weight: 300;
-  line-height: 1.2;
 }
 @media (min-width: 1200px) {
   .display-3 {
     font-size: 4rem;
   }
 }
+.display-3 {
+  font-weight: 300;
+  line-height: 1.2;
+}
 
 .display-4 {
   font-size: calc(1.475rem + 2.7vw);
-  font-weight: 300;
-  line-height: 1.2;
 }
 @media (min-width: 1200px) {
   .display-4 {
     font-size: 3.5rem;
   }
 }
+.display-4 {
+  font-weight: 300;
+  line-height: 1.2;
+}
 
 .display-5 {
   font-size: calc(1.425rem + 2.1vw);
-  font-weight: 300;
-  line-height: 1.2;
 }
 @media (min-width: 1200px) {
   .display-5 {
     font-size: 3rem;
   }
 }
+.display-5 {
+  font-weight: 300;
+  line-height: 1.2;
+}
 
 .display-6 {
   font-size: calc(1.375rem + 1.5vw);
-  font-weight: 300;
-  line-height: 1.2;
 }
 @media (min-width: 1200px) {
   .display-6 {
     font-size: 2.5rem;
   }
+}
+.display-6 {
+  font-weight: 300;
+  line-height: 1.2;
 }
 
 .list-unstyled {
@@ -2337,14 +2351,16 @@ textarea.form-control-lg {
   border: 1px solid #ced4da;
   border-radius: 0.375rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-select {
     transition: none;
   }
+}
+.form-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .form-select:focus {
   border-color: rgb(127.5, 168.5, 217.5);
@@ -2534,14 +2550,16 @@ textarea.form-control-lg {
   border-radius: 1rem;
   -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -webkit-appearance: none;
-  appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-range::-webkit-slider-thumb {
     -webkit-transition: none;
     transition: none;
   }
+}
+.form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
 }
 .form-range::-webkit-slider-thumb:active {
   background-color: rgb(178.5, 203.1, 232.5);
@@ -2563,14 +2581,16 @@ textarea.form-control-lg {
   border-radius: 1rem;
   -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -moz-appearance: none;
-  appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-range::-moz-range-thumb {
     -moz-transition: none;
     transition: none;
   }
+}
+.form-range::-moz-range-thumb {
+  -moz-appearance: none;
+  appearance: none;
 }
 .form-range::-moz-range-thumb:active {
   background-color: rgb(178.5, 203.1, 232.5);
@@ -6101,12 +6121,14 @@ textarea.form-control-lg {
 }
 .modal.fade .modal-dialog {
   transition: transform 0.3s ease-out;
-  transform: translate(0, -50px);
 }
 @media (prefers-reduced-motion: reduce) {
   .modal.fade .modal-dialog {
     transition: none;
   }
+}
+.modal.fade .modal-dialog {
+  transform: translate(0, -50px);
 }
 .modal.show .modal-dialog {
   transform: none;
@@ -11676,14 +11698,16 @@ body {
   border: 1px solid #ced4da;
   border-radius: 0.375rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .widget_archive select {
     transition: none;
   }
+}
+.widget_archive select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .widget_archive select:focus {
   border-color: rgb(127.5, 168.5, 217.5);
@@ -12667,9 +12691,6 @@ h1, .h1 {
   font-family: "Kanit", "sans-serif";
   font-weight: 700;
   color: inherit;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 h1, .h1 {
   font-size: 32px;
@@ -12684,14 +12705,16 @@ h1, .h1 {
     font-size: 48px;
   }
 }
+h1, .h1 {
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 h2, .h2 {
   font-family: "Kanit", "sans-serif";
   font-weight: 700;
   color: inherit;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 h2, .h2 {
   font-size: 32px;
@@ -12706,15 +12729,15 @@ h2, .h2 {
     font-size: 48px;
   }
 }
+h2, .h2 {
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 h3, .h3 {
   font-family: "Kanit", "sans-serif";
   color: inherit;
-  font-style: italic;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
 }
 h3, .h3 {
   font-size: 28px;
@@ -12729,14 +12752,17 @@ h3, .h3 {
     font-size: 36px;
   }
 }
+h3, .h3 {
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
 
 h4, .h4 {
   font-family: "Kanit", "sans-serif";
   color: inherit;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
 }
 h4, .h4 {
   font-size: 22px;
@@ -12751,14 +12777,17 @@ h4, .h4 {
     font-size: 28px;
   }
 }
+h4, .h4 {
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
 
 h5, .h5, #product-archive .woocommerce-loop-product__title {
   font-family: "Kanit", "sans-serif";
   font-weight: 300;
   color: inherit;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 h5, .h5, #product-archive .woocommerce-loop-product__title {
   font-size: 18px;
@@ -12772,6 +12801,11 @@ h5, .h5, #product-archive .woocommerce-loop-product__title {
   h5, .h5, #product-archive .woocommerce-loop-product__title {
     font-size: 22px;
   }
+}
+h5, .h5, #product-archive .woocommerce-loop-product__title {
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .lead-text {
@@ -12935,19 +12969,6 @@ h5, .h5, #product-archive .woocommerce-loop-product__title {
 .woocommerce-notices-wrapper .woocommerce .woocommerce-message a.button,
 .woocommerce-info .woocommerce .woocommerce-message a.button, .echo-button--outline-black, .echo-button--white, #footer .footer-bottom .newsletter-form button, .echo-button--green, .echo-button--red, .tyre-category .tyre-categories .cta-group .ctas .cta:last-child a, .echo-button--blue, .tyre-category .tyre-categories .cta-group .ctas .cta:first-child a {
   color: white;
-  font-family: "Kanit", "sans-serif";
-  font-weight: 500;
-  font-style: italic;
-  border-radius: 50px;
-  text-decoration: none;
-  padding: 5px 25px;
-  min-height: 40px;
-  transition: all 0.3s;
-  border: 1px solid;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  text-transform: uppercase;
 }
 .echo-button, .woocommerce .woocommerce-info .btn, .woocommerce .woocommerce-info .wpcf7 input[type=submit], .wpcf7 .woocommerce .woocommerce-info input[type=submit], .woocommerce .woocommerce-info a.button,
 .woocommerce .woocommerce-message .btn,
@@ -12979,6 +13000,27 @@ h5, .h5, #product-archive .woocommerce-loop-product__title {
   .woocommerce-info .woocommerce .woocommerce-message a.button, .echo-button--outline-black, .echo-button--white, #footer .footer-bottom .newsletter-form button, .echo-button--green, .echo-button--red, .tyre-category .tyre-categories .cta-group .ctas .cta:last-child a, .echo-button--blue, .tyre-category .tyre-categories .cta-group .ctas .cta:first-child a {
     font-size: 18px;
   }
+}
+.echo-button, .woocommerce .woocommerce-info .btn, .woocommerce .woocommerce-info .wpcf7 input[type=submit], .wpcf7 .woocommerce .woocommerce-info input[type=submit], .woocommerce .woocommerce-info a.button,
+.woocommerce .woocommerce-message .btn,
+.woocommerce .woocommerce-message .wpcf7 input[type=submit],
+.wpcf7 .woocommerce .woocommerce-message input[type=submit],
+.woocommerce .woocommerce-notices-wrapper .woocommerce-message a.button,
+.woocommerce-notices-wrapper .woocommerce .woocommerce-message a.button,
+.woocommerce-info .woocommerce .woocommerce-message a.button, .echo-button--outline-black, .echo-button--white, #footer .footer-bottom .newsletter-form button, .echo-button--green, .echo-button--red, .tyre-category .tyre-categories .cta-group .ctas .cta:last-child a, .echo-button--blue, .tyre-category .tyre-categories .cta-group .ctas .cta:first-child a {
+  font-family: "Kanit", "sans-serif";
+  font-weight: 500;
+  font-style: italic;
+  border-radius: 50px;
+  text-decoration: none;
+  padding: 5px 25px;
+  min-height: 40px;
+  transition: all 0.3s;
+  border: 1px solid;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
 }
 @media (min-width: 1200px) {
   .echo-button, .woocommerce .woocommerce-info .btn, .woocommerce .woocommerce-info .wpcf7 input[type=submit], .wpcf7 .woocommerce .woocommerce-info input[type=submit], .woocommerce .woocommerce-info a.button,
@@ -13049,8 +13091,6 @@ h5, .h5, #product-archive .woocommerce-loop-product__title {
   font-family: "Kanit", "sans-serif";
   color: white;
   font-style: italic;
-  font-weight: 500;
-  padding: 11px 20px;
 }
 #landing-page .top-text p {
   font-size: 26px;
@@ -13064,6 +13104,10 @@ h5, .h5, #product-archive .woocommerce-loop-product__title {
   #landing-page .top-text p {
     font-size: 36px;
   }
+}
+#landing-page .top-text p {
+  font-weight: 500;
+  padding: 11px 20px;
 }
 #landing-page .landing-page-content {
   height: calc(100vh - 91px);
@@ -13236,9 +13280,6 @@ h5, .h5, #product-archive .woocommerce-loop-product__title {
   font-family: "Kanit", "sans-serif";
   color: #373737;
   text-decoration: none;
-  font-weight: 600;
-  display: table;
-  align-items: center;
 }
 .contact-number-shortcode a {
   font-size: 32px;
@@ -13252,6 +13293,11 @@ h5, .h5, #product-archive .woocommerce-loop-product__title {
   .contact-number-shortcode a {
     font-size: 42px;
   }
+}
+.contact-number-shortcode a {
+  font-weight: 600;
+  display: table;
+  align-items: center;
 }
 .contact-number-shortcode a img {
   width: 50px;
@@ -13314,7 +13360,6 @@ select.echo-form-field + .select2-container,
   padding: 10px 25px !important;
   color: black !important;
   font-family: "Kanit", "sans-serif" !important;
-  font-style: italic;
 }
 input[type=text].echo-form-field,
 input[type=search].echo-form-field,
@@ -13442,6 +13487,47 @@ select.echo-form-field + .select2-container,
   .woocommerce table.cart select.echo-form-field + .select2-container {
     font-size: 18px;
   }
+}
+input[type=text].echo-form-field,
+input[type=search].echo-form-field,
+input[type=password].echo-form-field,
+input[type=email].echo-form-field,
+input[type=tel].echo-form-field,
+input[type=number].echo-form-field,
+input[type=file].echo-form-field,
+textarea.echo-form-field,
+select.echo-form-field,
+select.echo-form-field + .select2-container,
+.acfe-form input[type=text],
+.acfe-form input[type=search],
+.acfe-form input[type=password],
+.acfe-form input[type=email],
+.acfe-form input[type=tel],
+.acfe-form input[type=number],
+.acfe-form input[type=file],
+.acfe-form textarea,
+.acfe-form select,
+#loginform .login-username input[type=text],
+#loginform .login-password input[type=password],
+.echo-form-field input[type=text],
+.echo-form-field input[type=search],
+.echo-form-field input[type=password],
+.echo-form-field input[type=email],
+.echo-form-field input[type=tel],
+.echo-form-field input[type=number],
+.echo-form-field input[type=file],
+.echo-form-field textarea,
+.echo-form-field select,
+select.echo-form-field + .select2-container,
+.woocommerce table.cart input[type=text].echo-form-field,
+.woocommerce table.cart input[type=password].echo-form-field,
+.woocommerce table.cart input[type=email].echo-form-field,
+.woocommerce table.cart input[type=tel].echo-form-field,
+.woocommerce table.cart input[type=number].echo-form-field,
+.woocommerce table.cart textarea.echo-form-field,
+.woocommerce table.cart select.echo-form-field,
+.woocommerce table.cart select.echo-form-field + .select2-container {
+  font-style: italic;
 }
 input[type=text].echo-form-field::-moz-placeholder, input[type=search].echo-form-field::-moz-placeholder, input[type=password].echo-form-field::-moz-placeholder, input[type=email].echo-form-field::-moz-placeholder, input[type=tel].echo-form-field::-moz-placeholder, input[type=number].echo-form-field::-moz-placeholder, input[type=file].echo-form-field::-moz-placeholder, textarea.echo-form-field::-moz-placeholder, select.echo-form-field::-moz-placeholder, select.echo-form-field + .select2-container::-moz-placeholder, .acfe-form input[type=text]::-moz-placeholder, .acfe-form input[type=search]::-moz-placeholder, .acfe-form input[type=password]::-moz-placeholder, .acfe-form input[type=email]::-moz-placeholder, .acfe-form input[type=tel]::-moz-placeholder, .acfe-form input[type=number]::-moz-placeholder, .acfe-form input[type=file]::-moz-placeholder, .acfe-form textarea::-moz-placeholder, .acfe-form select::-moz-placeholder, #loginform .login-username input[type=text]::-moz-placeholder, #loginform .login-password input[type=password]::-moz-placeholder, .echo-form-field input[type=text]::-moz-placeholder, .echo-form-field input[type=search]::-moz-placeholder, .echo-form-field input[type=password]::-moz-placeholder, .echo-form-field input[type=email]::-moz-placeholder, .echo-form-field input[type=tel]::-moz-placeholder, .echo-form-field input[type=number]::-moz-placeholder, .echo-form-field input[type=file]::-moz-placeholder, .echo-form-field textarea::-moz-placeholder, .echo-form-field select::-moz-placeholder, select.echo-form-field + .select2-container::-moz-placeholder, .woocommerce table.cart input[type=text].echo-form-field::-moz-placeholder, .woocommerce table.cart input[type=password].echo-form-field::-moz-placeholder, .woocommerce table.cart input[type=email].echo-form-field::-moz-placeholder, .woocommerce table.cart input[type=tel].echo-form-field::-moz-placeholder, .woocommerce table.cart input[type=number].echo-form-field::-moz-placeholder, .woocommerce table.cart textarea.echo-form-field::-moz-placeholder, .woocommerce table.cart select.echo-form-field::-moz-placeholder, .woocommerce table.cart select.echo-form-field + .select2-container::-moz-placeholder {
   color: black !important;
@@ -13627,7 +13713,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   display: flex;
   position: relative;
   align-items: center;
-  color: #0052B4;
 }
 .echo-checkbox-label {
   font-size: 16px;
@@ -13641,6 +13726,9 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   .echo-checkbox-label {
     font-size: 18px;
   }
+}
+.echo-checkbox-label {
+  color: #0052B4;
 }
 .echo-checkbox-label::before {
   content: "";
@@ -13694,7 +13782,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   cursor: pointer;
   color: #0052B4;
   text-decoration: underline;
-  font-style: italic;
 }
 .file-upload .file-label {
   font-size: 18px;
@@ -13708,6 +13795,9 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   .file-upload .file-label {
     font-size: 20px;
   }
+}
+.file-upload .file-label {
+  font-style: italic;
 }
 .file-upload .file-label::before {
   content: "";
@@ -13819,11 +13909,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   color: #0052B4;
 }
 #header .header-top .my-account-btn {
-  font-family: "Open Sans", "sans-serif";
-  font-style: normal;
-  padding: 8px 30px;
-}
-#header .header-top .my-account-btn {
   font-size: 14px;
 }
 @media screen and (min-width: 480px) {
@@ -13835,6 +13920,11 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   #header .header-top .my-account-btn {
     font-size: 14px;
   }
+}
+#header .header-top .my-account-btn {
+  font-family: "Open Sans", "sans-serif";
+  font-style: normal;
+  padding: 8px 30px;
 }
 #header .header-top .login-link .icon {
   font-size: 32px;
@@ -13865,8 +13955,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 #header .header-bottom {
   background-color: #D80027;
   text-align: center;
-  color: white;
-  padding: 7px 0;
 }
 #header .header-bottom {
   font-size: 14px;
@@ -13881,6 +13969,10 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
     font-size: 14px;
   }
 }
+#header .header-bottom {
+  color: white;
+  padding: 7px 0;
+}
 #header .header-menu {
   background-color: black;
 }
@@ -13891,8 +13983,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 }
 #header .header-menu .menu-container ul li a {
   padding: 12px 15px;
-  color: white;
-  transition: all 0.3s;
 }
 #header .header-menu .menu-container ul li a {
   font-size: 14px;
@@ -13906,6 +13996,10 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   #header .header-menu .menu-container ul li a {
     font-size: 14px;
   }
+}
+#header .header-menu .menu-container ul li a {
+  color: white;
+  transition: all 0.3s;
 }
 @media (min-width: 1400px) {
   #header .header-menu .menu-container ul li a {
@@ -14048,7 +14142,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 #footer .footer-bottom .social-links li a {
   color: white;
   text-decoration: none;
-  transition: all 0.3s;
 }
 #footer .footer-bottom .social-links li a {
   font-size: 26px;
@@ -14062,6 +14155,9 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   #footer .footer-bottom .social-links li a {
     font-size: 32px;
   }
+}
+#footer .footer-bottom .social-links li a {
+  transition: all 0.3s;
 }
 #footer .footer-bottom .social-links li a:hover {
   color: #0052B4;
@@ -14141,7 +14237,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 }
 #footer .footer-bottom .copyright-section .bottom-links a {
   color: white;
-  text-decoration: none;
 }
 #footer .footer-bottom .copyright-section .bottom-links a {
   font-size: 14px;
@@ -14155,6 +14250,9 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   #footer .footer-bottom .copyright-section .bottom-links a {
     font-size: 14px;
   }
+}
+#footer .footer-bottom .copyright-section .bottom-links a {
+  text-decoration: none;
 }
 #footer .footer-bottom .copyright-section .bottom-links a:hover {
   text-decoration: underline;
@@ -14178,39 +14276,60 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   padding: 0;
   margin: 0;
 }
-#product-archive .product .entry-summary .serial-number {
-  font-family: "Kanit", "sans-serif";
-  color: #7C7C7C;
+#product-archive .product .entry-summary .brand-logo {
+  max-height: 43px;
 }
-#product-archive .product .entry-summary .serial-number {
+#product-archive .product .entry-summary .tyre-size {
   font-size: 16px;
 }
 @media screen and (min-width: 480px) {
-  #product-archive .product .entry-summary .serial-number {
+  #product-archive .product .entry-summary .tyre-size {
     font-size: calc(16px + 2 * (100vw - 480px) / 1440);
   }
 }
 @media screen and (min-width: 1920px) {
+  #product-archive .product .entry-summary .tyre-size {
+    font-size: 18px;
+  }
+}
+#product-archive .product .entry-summary .tyre-size {
+  font-family: "Kanit", "sans-serif";
+  color: #7C7C7C;
+  font-weight: 300;
+}
+#product-archive .product .entry-summary .serial-number {
+  font-size: 14px;
+}
+@media screen and (min-width: 480px) {
   #product-archive .product .entry-summary .serial-number {
+    font-size: calc(14px + 2 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  #product-archive .product .entry-summary .serial-number {
+    font-size: 16px;
+  }
+}
+#product-archive .product .entry-summary .serial-number {
+  font-family: "Kanit", "sans-serif";
+  color: #7C7C7C;
+}
+#product-archive .product .entry-summary .stock {
+  font-size: 16px;
+}
+@media screen and (min-width: 480px) {
+  #product-archive .product .entry-summary .stock {
+    font-size: calc(16px + 2 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  #product-archive .product .entry-summary .stock {
     font-size: 18px;
   }
 }
 #product-archive .product .entry-summary .stock {
   font-family: "Kanit", "sans-serif";
   font-weight: 500;
-}
-#product-archive .product .entry-summary .stock {
-  font-size: 16px;
-}
-@media screen and (min-width: 480px) {
-  #product-archive .product .entry-summary .stock {
-    font-size: calc(16px + 2 * (100vw - 480px) / 1440);
-  }
-}
-@media screen and (min-width: 1920px) {
-  #product-archive .product .entry-summary .stock {
-    font-size: 18px;
-  }
 }
 #product-archive .product .entry-summary .quantity-wrap {
   display: flex;
@@ -14244,7 +14363,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 #product-archive .product .entry-summary .price-exc-vat {
   color: #D80027;
   font-weight: 500;
-  font-family: "Kanit", "sans-serif";
 }
 #product-archive .product .entry-summary .price-exc-vat {
   font-size: 20px;
@@ -14259,10 +14377,11 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
     font-size: 28px;
   }
 }
+#product-archive .product .entry-summary .price-exc-vat {
+  font-family: "Kanit", "sans-serif";
+}
 #product-archive .product .entry-summary .price-exc-vat small, #product-archive .product .entry-summary .price-exc-vat .small {
   font-family: "Open Sans", "sans-serif";
-  vertical-align: super;
-  font-weight: inherit;
 }
 #product-archive .product .entry-summary .price-exc-vat small, #product-archive .product .entry-summary .price-exc-vat .small {
   font-size: 10px;
@@ -14276,6 +14395,10 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   #product-archive .product .entry-summary .price-exc-vat small, #product-archive .product .entry-summary .price-exc-vat .small {
     font-size: 10px;
   }
+}
+#product-archive .product .entry-summary .price-exc-vat small, #product-archive .product .entry-summary .price-exc-vat .small {
+  vertical-align: super;
+  font-weight: inherit;
 }
 #product-archive .product .entry-summary .price-inc-vat {
   font-weight: 500;
@@ -14297,8 +14420,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 }
 #product-archive .product .entry-summary .price-inc-vat small, #product-archive .product .entry-summary .price-inc-vat .small {
   font-family: "Open Sans", "sans-serif";
-  vertical-align: super;
-  font-weight: inherit;
 }
 #product-archive .product .entry-summary .price-inc-vat small, #product-archive .product .entry-summary .price-inc-vat .small {
   font-size: 10px;
@@ -14312,6 +14433,10 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   #product-archive .product .entry-summary .price-inc-vat small, #product-archive .product .entry-summary .price-inc-vat .small {
     font-size: 10px;
   }
+}
+#product-archive .product .entry-summary .price-inc-vat small, #product-archive .product .entry-summary .price-inc-vat .small {
+  vertical-align: super;
+  font-weight: inherit;
 }
 
 .product-card a {
@@ -14333,10 +14458,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 .product-card a .rating-badge span {
   color: white;
   display: block;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-family: "Kanit", "sans-serif";
-  letter-spacing: 1px;
 }
 .product-card a .rating-badge span {
   font-size: 14px;
@@ -14350,6 +14471,12 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   .product-card a .rating-badge span {
     font-size: 16px;
   }
+}
+.product-card a .rating-badge span {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Kanit", "sans-serif";
+  letter-spacing: 1px;
 }
 .product-card a .rating-badge::after {
   content: "";
@@ -14379,23 +14506,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 .woocommerce-notices-wrapper .woocommerce .woocommerce-message .product-card a.button,
 .product-card .woocommerce-info .woocommerce .woocommerce-message a.button,
 .woocommerce-info .woocommerce .woocommerce-message .product-card a.button, .product-card .echo-button--blue, .product-card .tyre-category .tyre-categories .cta-group .ctas .cta:first-child a, .tyre-category .tyre-categories .cta-group .ctas .cta:first-child .product-card a, .product-card .echo-button--red, .product-card .tyre-category .tyre-categories .cta-group .ctas .cta:last-child a, .tyre-category .tyre-categories .cta-group .ctas .cta:last-child .product-card a, .product-card .echo-button--green, .product-card .echo-button--white, .product-card .echo-button--outline-black, .product-card #footer .footer-bottom .newsletter-form button, #footer .footer-bottom .newsletter-form .product-card button {
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 100%;
-}
-.product-card .echo-button, .product-card .woocommerce .woocommerce-info .btn, .woocommerce .woocommerce-info .product-card .btn, .product-card .woocommerce .woocommerce-info .wpcf7 input[type=submit], .woocommerce .woocommerce-info .wpcf7 .product-card input[type=submit], .product-card .wpcf7 .woocommerce .woocommerce-info input[type=submit], .wpcf7 .woocommerce .woocommerce-info .product-card input[type=submit], .product-card .woocommerce .woocommerce-info a.button, .woocommerce .woocommerce-info .product-card a.button,
-.product-card .woocommerce .woocommerce-message .btn,
-.woocommerce .woocommerce-message .product-card .btn,
-.product-card .woocommerce .woocommerce-message .wpcf7 input[type=submit],
-.woocommerce .woocommerce-message .wpcf7 .product-card input[type=submit],
-.product-card .wpcf7 .woocommerce .woocommerce-message input[type=submit],
-.wpcf7 .woocommerce .woocommerce-message .product-card input[type=submit],
-.product-card .woocommerce .woocommerce-notices-wrapper .woocommerce-message a.button,
-.woocommerce .woocommerce-notices-wrapper .woocommerce-message .product-card a.button,
-.product-card .woocommerce-notices-wrapper .woocommerce .woocommerce-message a.button,
-.woocommerce-notices-wrapper .woocommerce .woocommerce-message .product-card a.button,
-.product-card .woocommerce-info .woocommerce .woocommerce-message a.button,
-.woocommerce-info .woocommerce .woocommerce-message .product-card a.button, .product-card .echo-button--blue, .product-card .tyre-category .tyre-categories .cta-group .ctas .cta:first-child a, .tyre-category .tyre-categories .cta-group .ctas .cta:first-child .product-card a, .product-card .echo-button--red, .product-card .tyre-category .tyre-categories .cta-group .ctas .cta:last-child a, .tyre-category .tyre-categories .cta-group .ctas .cta:last-child .product-card a, .product-card .echo-button--green, .product-card .echo-button--white, .product-card .echo-button--outline-black, .product-card #footer .footer-bottom .newsletter-form button, #footer .footer-bottom .newsletter-form .product-card button {
   font-size: 16px;
 }
 @media screen and (min-width: 480px) {
@@ -14431,6 +14541,23 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   .woocommerce-info .woocommerce .woocommerce-message .product-card a.button, .product-card .echo-button--blue, .product-card .tyre-category .tyre-categories .cta-group .ctas .cta:first-child a, .tyre-category .tyre-categories .cta-group .ctas .cta:first-child .product-card a, .product-card .echo-button--red, .product-card .tyre-category .tyre-categories .cta-group .ctas .cta:last-child a, .tyre-category .tyre-categories .cta-group .ctas .cta:last-child .product-card a, .product-card .echo-button--green, .product-card .echo-button--white, .product-card .echo-button--outline-black, .product-card #footer .footer-bottom .newsletter-form button, #footer .footer-bottom .newsletter-form .product-card button {
     font-size: 18px;
   }
+}
+.product-card .echo-button, .product-card .woocommerce .woocommerce-info .btn, .woocommerce .woocommerce-info .product-card .btn, .product-card .woocommerce .woocommerce-info .wpcf7 input[type=submit], .woocommerce .woocommerce-info .wpcf7 .product-card input[type=submit], .product-card .wpcf7 .woocommerce .woocommerce-info input[type=submit], .wpcf7 .woocommerce .woocommerce-info .product-card input[type=submit], .product-card .woocommerce .woocommerce-info a.button, .woocommerce .woocommerce-info .product-card a.button,
+.product-card .woocommerce .woocommerce-message .btn,
+.woocommerce .woocommerce-message .product-card .btn,
+.product-card .woocommerce .woocommerce-message .wpcf7 input[type=submit],
+.woocommerce .woocommerce-message .wpcf7 .product-card input[type=submit],
+.product-card .wpcf7 .woocommerce .woocommerce-message input[type=submit],
+.wpcf7 .woocommerce .woocommerce-message .product-card input[type=submit],
+.product-card .woocommerce .woocommerce-notices-wrapper .woocommerce-message a.button,
+.woocommerce .woocommerce-notices-wrapper .woocommerce-message .product-card a.button,
+.product-card .woocommerce-notices-wrapper .woocommerce .woocommerce-message a.button,
+.woocommerce-notices-wrapper .woocommerce .woocommerce-message .product-card a.button,
+.product-card .woocommerce-info .woocommerce .woocommerce-message a.button,
+.woocommerce-info .woocommerce .woocommerce-message .product-card a.button, .product-card .echo-button--blue, .product-card .tyre-category .tyre-categories .cta-group .ctas .cta:first-child a, .tyre-category .tyre-categories .cta-group .ctas .cta:first-child .product-card a, .product-card .echo-button--red, .product-card .tyre-category .tyre-categories .cta-group .ctas .cta:last-child a, .tyre-category .tyre-categories .cta-group .ctas .cta:last-child .product-card a, .product-card .echo-button--green, .product-card .echo-button--white, .product-card .echo-button--outline-black, .product-card #footer .footer-bottom .newsletter-form button, #footer .footer-bottom .newsletter-form .product-card button {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
 }
 .product-card .woocommerce-placeholder {
   border: 0 !important;
@@ -14526,7 +14653,6 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   font-style: italic;
   font-weight: 300;
   position: relative;
-  text-transform: uppercase;
 }
 .woocommerce div.product .woocommerce-tabs .wc-tabs-title {
   font-size: 18px;
@@ -14540,6 +14666,9 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   .woocommerce div.product .woocommerce-tabs .wc-tabs-title {
     font-size: 21px;
   }
+}
+.woocommerce div.product .woocommerce-tabs .wc-tabs-title {
+  text-transform: uppercase;
 }
 .woocommerce div.product .woocommerce-tabs .wc-tabs-title span {
   display: inline-block;
@@ -14565,9 +14694,13 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs {
   padding: 0;
-  display: flex;
   background-color: #D6D6D6;
   border-radius: 25px;
+}
+@media (min-width: 576px) {
+  .woocommerce div.product .woocommerce-tabs ul.tabs {
+    display: flex;
+  }
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs::before {
   display: none !important;
@@ -14578,6 +14711,8 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   background: none;
   flex: 1;
   padding: 0;
+  display: flex !important;
+  align-items: center;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
   background-color: #0052B4;
@@ -14592,8 +14727,109 @@ select.echo-form-field + .select2-container .select2-selection__rendered, select
   font-family: "Kanit", "sans-serif";
   color: #373737;
 }
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  font-size: 16px;
+}
+@media screen and (min-width: 480px) {
+  .woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    font-size: calc(16px + 2 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    font-size: 18px;
+  }
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  padding: 14px 15px 13px;
+}
 .woocommerce div.product .woocommerce-tabs ul.tabs li::before, .woocommerce div.product .woocommerce-tabs ul.tabs li::after {
   display: none !important;
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table {
+  width: 100%;
+  border: 1px solid #0052B4;
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table th, .woocommerce div.product .woocommerce-tabs .product-information-table td {
+  padding: 8px 8px;
+  min-height: 60px;
+  width: 20%;
+}
+@media (min-width: 1200px) {
+  .woocommerce div.product .woocommerce-tabs .product-information-table th, .woocommerce div.product .woocommerce-tabs .product-information-table td {
+    padding: 15px 20px;
+  }
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table th {
+  background-color: #0052B4;
+  color: white;
+  font-family: "Kanit", "sans-serif";
+  text-transform: uppercase;
+  font-style: italic;
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table th {
+  font-size: 16px;
+}
+@media screen and (min-width: 480px) {
+  .woocommerce div.product .woocommerce-tabs .product-information-table th {
+    font-size: calc(16px + 4 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .woocommerce div.product .woocommerce-tabs .product-information-table th {
+    font-size: 20px;
+  }
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table th:not(:last-child) {
+  border-right: 1px solid white;
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table td {
+  font-size: 16px;
+}
+@media screen and (min-width: 480px) {
+  .woocommerce div.product .woocommerce-tabs .product-information-table td {
+    font-size: calc(16px + 4 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .woocommerce div.product .woocommerce-tabs .product-information-table td {
+    font-size: 20px;
+  }
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table td {
+  font-family: "Kanit", "sans-serif";
+  color: #0052B4;
+  font-style: italic;
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table td:not(:last-child) {
+  border-right: 1px solid #0052B4;
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table.desktop {
+  display: none;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  .woocommerce div.product .woocommerce-tabs .product-information-table.desktop {
+    display: table;
+  }
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table.mobile {
+  display: table;
+  text-align: left;
+}
+@media (min-width: 576px) {
+  .woocommerce div.product .woocommerce-tabs .product-information-table.mobile {
+    display: none;
+  }
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table.mobile th {
+  border-bottom: 1px solid white;
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table.mobile td {
+  border-bottom: 1px solid #0052B4;
+}
+.woocommerce div.product .woocommerce-tabs .product-information-table.mobile tr:last-child th, .woocommerce div.product .woocommerce-tabs .product-information-table.mobile tr:last-child td {
+  border-bottom: 0;
 }
 
 /**************************************/
@@ -15068,17 +15304,6 @@ body .cky-consent-container {
   font-family: icomoon;
   position: absolute;
   z-index: 1;
-  color: white;
-  width: 60px;
-  height: 60px;
-  line-height: 48px;
-  border-radius: 100px;
-  border: 7px solid white;
-  background-color: #0052B4;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -40px;
 }
 .echo-block .usp-block .container .usp-list li::before {
   font-size: 26px;
@@ -15092,6 +15317,19 @@ body .cky-consent-container {
   .echo-block .usp-block .container .usp-list li::before {
     font-size: 36px;
   }
+}
+.echo-block .usp-block .container .usp-list li::before {
+  color: white;
+  width: 60px;
+  height: 60px;
+  line-height: 48px;
+  border-radius: 100px;
+  border: 7px solid white;
+  background-color: #0052B4;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -40px;
 }
 @media (min-width: 576px) {
   .echo-block .usp-block .container .usp-list li::before {
@@ -15153,6 +15391,9 @@ body .cky-consent-container {
     margin-top: 1rem;
   }
 }
+.echo-block .usp-icons .usps .usp img {
+  max-width: 130px;
+}
 .echo-block .usp-icons .usps .usp .usp-label {
   padding: 0 10px;
 }
@@ -15198,7 +15439,6 @@ body .cky-consent-container {
 }
 .accreditation-logo .container .acc-logos .acc-logo-label {
   color: #373737;
-  font-family: "Kanit", "sans-serif";
 }
 .accreditation-logo .container .acc-logos .acc-logo-label {
   font-size: 14px;
@@ -15212,6 +15452,9 @@ body .cky-consent-container {
   .accreditation-logo .container .acc-logos .acc-logo-label {
     font-size: 16px;
   }
+}
+.accreditation-logo .container .acc-logos .acc-logo-label {
+  font-family: "Kanit", "sans-serif";
 }
 
 .echo-block-contact_form {
@@ -15290,10 +15533,6 @@ body .cky-consent-container {
   }
 }
 .echo-block-contact_form .contact-details .phone, .echo-block-contact_form .contact-details .email {
-  font-weight: 600;
-  font-family: "Kanit", "sans-serif";
-}
-.echo-block-contact_form .contact-details .phone, .echo-block-contact_form .contact-details .email {
   font-size: 20px;
 }
 @media screen and (min-width: 480px) {
@@ -15305,6 +15544,10 @@ body .cky-consent-container {
   .echo-block-contact_form .contact-details .phone, .echo-block-contact_form .contact-details .email {
     font-size: 26px;
   }
+}
+.echo-block-contact_form .contact-details .phone, .echo-block-contact_form .contact-details .email {
+  font-weight: 600;
+  font-family: "Kanit", "sans-serif";
 }
 .echo-block-contact_form .contact-details .phone .label, .echo-block-contact_form .contact-details .email .label {
   font-weight: 300;
@@ -15361,9 +15604,6 @@ body .cky-consent-container {
   }
 }
 .map-block .header .container .subtitle {
-  font-weight: 600;
-}
-.map-block .header .container .subtitle {
   font-size: 26px;
 }
 @media screen and (min-width: 480px) {
@@ -15375,6 +15615,9 @@ body .cky-consent-container {
   .map-block .header .container .subtitle {
     font-size: 32px;
   }
+}
+.map-block .header .container .subtitle {
+  font-weight: 600;
 }
 
 .tyre-category .block-title {
@@ -15430,10 +15673,6 @@ body .cky-consent-container {
 }
 .tyre-category .tyre-categories .cta-group .cta-label {
   font-family: "Kanit", "sans-serif";
-  font-weight: bold;
-  text-align: center;
-  font-style: italic;
-  position: relative;
 }
 .tyre-category .tyre-categories .cta-group .cta-label {
   font-size: 18px;
@@ -15447,6 +15686,12 @@ body .cky-consent-container {
   .tyre-category .tyre-categories .cta-group .cta-label {
     font-size: 21px;
   }
+}
+.tyre-category .tyre-categories .cta-group .cta-label {
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+  position: relative;
 }
 .tyre-category .tyre-categories .cta-group .cta-label span {
   display: inline-block;
@@ -15475,6 +15720,97 @@ body .cky-consent-container {
 }
 .echo-block.bg-light-gray .tyre-category .tyre-categories .cta-group .cta-label span {
   background-color: #F7F7F7;
+}
+
+@media screen and (min-width: 1200px) {
+  .text-block-left-decoration .container .deco {
+    background: url(../images/tyre-left-deco.jpg) no-repeat left top;
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 24px);
+  }
+  .text-block-left-decoration .container .deco::before {
+    content: "";
+    position: absolute;
+    background: url(../images/deco-tyre.png) no-repeat center;
+    background-size: contain;
+    width: 21.053vw;
+    height: 18.031vw;
+    left: 0;
+    bottom: 0;
+  }
+}
+.text-block-left-decoration .container .content-1 {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+.text-block-left-decoration .container .content-1 {
+  font-size: 20px;
+}
+@media screen and (min-width: 480px) {
+  .text-block-left-decoration .container .content-1 {
+    font-size: calc(20px + 8 * (100vw - 480px) / 1440);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .text-block-left-decoration .container .content-1 {
+    font-size: 28px;
+  }
+}
+.text-block-left-decoration .container .content-1 {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.text-block-left-decoration .container .content-1 div {
+  padding: 20px 20px 20px 8vw;
+}
+@media screen and (max-width: 1200px) {
+  .text-block-left-decoration .container .content-1 {
+    background: url(../images/tyre-left-deco.jpg) no-repeat left top;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 1rem;
+  }
+  .text-block-left-decoration .container .content-1::before {
+    content: "";
+    position: absolute;
+    background: url(../images/deco-tyre.png) no-repeat center;
+    background-size: contain;
+    width: 250px;
+    height: 214px;
+    left: 0;
+    bottom: 0;
+  }
+  .text-block-left-decoration .container .content-1 div {
+    padding: 20px 20px 20px 250px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .text-block-left-decoration .container .content-1::before {
+    width: 180px;
+    height: 154px;
+  }
+  .text-block-left-decoration .container .content-1 div {
+    padding: 20px 20px 20px 180px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .text-block-left-decoration .container .content-1 {
+    background: url(../images/tyre-left-deco3.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .text-block-left-decoration .container .content-1::before {
+    width: 0;
+    height: 0;
+  }
+  .text-block-left-decoration .container .content-1 div {
+    padding: 20px 20px;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */

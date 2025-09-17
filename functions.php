@@ -55,3 +55,19 @@ function my_contact_number_shortcode() {
     return $html;
 }
 add_shortcode( 'contact_number', 'my_contact_number_shortcode' );
+
+// Disable /users rest routes
+add_filter('rest_endpoints', function( $endpoints ) {
+    if ( isset( $endpoints['/wp/v2/users'] ) ) {
+        unset( $endpoints['/wp/v2/users'] );
+    }
+    if ( isset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] ) ) {
+        unset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] );
+    }
+    return $endpoints;
+});
+
+add_action( 'send_headers', 'wc_prevent_clickjacking', 10 );
+function wc_prevent_clickjacking() { 
+    header( 'X-FRAME-OPTIONS: SAMEORIGIN' );
+}

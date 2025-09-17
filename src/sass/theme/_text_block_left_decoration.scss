@@ -1,0 +1,87 @@
+.text-block-left-decoration {
+    .container {
+        .deco {
+            @media screen and (min-width:1200px) {
+                background: url(../images/tyre-left-deco.jpg) no-repeat left top;
+                position: absolute;
+                background-size: cover;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: calc(50% - 24px);
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background: url(../images/deco-tyre.png) no-repeat center;
+                    background-size: contain;
+                    width: 21.053vw;
+                    height: 18.031vw;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+        }
+
+        .content-1 {
+            position: relative;
+            z-index: 1;
+            color: white;
+            @include fluid-type($min_width, $max_width, 20px, 28px);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+
+            div {
+                padding: 20px 20px 20px 8vw;
+            }
+
+            @media screen and (max-width:1200px) {
+                background: url(../images/tyre-left-deco.jpg) no-repeat left top;
+                position: relative;
+                background-size: cover;
+                margin-bottom: 1rem;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background: url(../images/deco-tyre.png) no-repeat center;
+                    background-size: contain;
+                    width: 250px;
+                    height: 214px;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                div {
+                    padding: 20px 20px 20px 250px;
+                }
+            }
+
+            @media screen and (max-width:768px) {
+                &::before {
+                    width: 180px;
+                    height: 154px;
+                }
+
+                div {
+                    padding: 20px 20px 20px 180px;
+                }
+            }
+
+            @media screen and (max-width:576px) {
+                background: url(../images/tyre-left-deco3.jpg) no-repeat center;
+                background-size: cover;
+
+                &::before {
+                    width: 0;
+                    height: 0;
+                }
+
+                div {
+                    padding: 20px 20px;
+                }
+            }
+        }
+    }
+}
