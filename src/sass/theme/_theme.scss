@@ -815,7 +815,7 @@ h5, .h5 {
 	> div {
 		padding: 40px 0;
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(xl) {
 			padding: 80px 0;
 		}
 	}
@@ -1137,6 +1137,12 @@ select.echo-form-field, select.wwlc_form_field {
 /**************************************/
 #header {
 	border-top: 10px solid $blue;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	background-color: #fff;
 	
 	@include media-breakpoint-up(xxl) {
 		border-top: 20px solid $blue;
@@ -1217,6 +1223,7 @@ select.echo-form-field, select.wwlc_form_field {
 		.mini-basket {
 			.mini-basket-label {
 				@include fluid-type($min_width, $max_width, 12px, 12px);
+				align-self: flex-end;
 
 				@media screen and (max-width:1300px) {
 					display: none;
@@ -1226,6 +1233,10 @@ select.echo-form-field, select.wwlc_form_field {
 			.icon {
 				font-size: 32px;
 				color: black;
+			}
+
+			.xoo-wsc-sc-count {
+				background-color: $blue;
 			}
 		}
 	}
@@ -1262,6 +1273,12 @@ select.echo-form-field, select.wwlc_form_field {
 							background-color: $blue;
 						}
 					}
+
+					&.current-menu-item {
+						a {
+							background-color: $blue;
+						}
+					}
 				}
 			}
 		}
@@ -1284,6 +1301,10 @@ select.echo-form-field, select.wwlc_form_field {
 			}
 
 			.mini-basket {
+				.mini-basket-label {
+					display: none;
+				}
+
 				.icon {
 					font-size: 28px;
 					color: black;
@@ -1349,6 +1370,44 @@ select.echo-form-field, select.wwlc_form_field {
 		input[type=search] {
 			padding: 0 20px;
 		}
+	}
+}
+
+main, #main-wc-page {
+	padding-top: 141.08px;
+
+	@include media-breakpoint-up(xl) {
+		padding-top: 220.56px;
+	}
+}
+
+body.logged-in {
+	#header {
+		top: 46px;
+
+		@media screen and (min-width:783px) {
+			top: 32px;
+		}
+	}
+
+	main, #main-wc-page {
+		@media screen and (min-width:1200px) {
+			padding-top: 198.56px;
+		}
+
+		@media screen and (min-width:1400px) {
+			padding-top: 208.56px;
+		}
+
+		@media screen and (min-width:1600px) {
+			padding-top: 220.56px;
+		}
+	}
+}
+
+.page-id-24 {
+	main {
+		padding-top: 0;
 	}
 }
 
@@ -1512,6 +1571,8 @@ select.echo-form-field, select.wwlc_form_field {
 /* !- Product Archive                 */
 /**************************************/
 #product-archive {
+	padding-top: 0;
+
 	.woocommerce-loop-product__title {
 		@extend .h5;
 		color: $copy-color;
@@ -2009,6 +2070,11 @@ select.echo-form-field, select.wwlc_form_field {
 			}
 		}
 	}
+}
+
+.xoo-wsc-basket,
+.xoo-wsc-basket[style*='block'] {
+	display: none !important;
 }
 
 /**************************************/

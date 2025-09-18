@@ -5,15 +5,16 @@
             margin: 0 auto;
 
             .usp {
-                @media screen and (max-width:768px) {
-                    &:nth-last-child(2),
-                    &:last-child {
-                        margin-top: 1rem;
-                    }
-                }
+                // @media screen and (max-width:768px) {
+                //     &:nth-last-child(2),
+                //     &:last-child {
+                //         margin-top: 1rem;
+                //     }
+                // }
 
                 img {
                     max-width: 130px;
+                    width: 100%;
                 }
 
                 .usp-label {

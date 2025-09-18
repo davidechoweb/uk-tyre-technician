@@ -98,6 +98,43 @@
                 }
             }
         }
+
+        .rating {
+            background-color: $blue;
+            width: 100px;
+            text-align: center;
+            margin: 0 auto 5px;
+            padding: 4px 10px;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 22px;
+                height: 26px;
+                background-size: contain;
+                background-position: center;
+            }
+
+            &::before {
+                background-image: url(../images/ribbon-left-blue.png);
+                left: -24px;
+                bottom: 0;
+            }
+
+            &::after {
+                background-image: url(../images/ribbon-right-blue.png);
+                right: -24px;
+                bottom: 0;
+            }
+
+            .icon {
+                color: #FFDE1D;
+                font-size: 12px;
+                margin: 0 1px;
+            }
+        }
     }
 }
 

@@ -23,7 +23,7 @@ $theme_options = get_fields('option');
 
 ?>
 
-<section class="echo-block remove_bottom_spacing_1">
+<section id="main-wc-page" class="echo-block remove_bottom_spacing_1">
 	<div class="padding-normal">
 		<div class="container">
 			<div class="row">

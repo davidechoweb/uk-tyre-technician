@@ -15,7 +15,29 @@
         <?php if ( $args['categories'] ) : ?>
         <div class="tyre-categories row">
             <?php foreach ( $args['categories'] as $key => $category ) : ?>
-            <div class="col-md-4 <?php echo ( $key != 0 ) ? 'mt-4 mt-xl-0' : ''; ?>">
+            <div class="col-md-4 <?php echo ( $key != 0 ) ? 'mt-4 mt-md-0' : ''; ?>">
+                <?php
+                    if ( $category['title'] == 'Premium' ) {
+                        echo '<div class="rating">';
+                            echo '<span class="icon icon-star"></span>';
+                            echo '<span class="icon icon-star"></span>';
+                            echo '<span class="icon icon-star"></span>';
+                            echo '<span class="icon icon-star"></span>';
+                            echo '<span class="icon icon-star"></span>';
+                        echo '</div>';
+                    } else if ( $category['title'] == 'Mid-Range' ) {
+                        echo '<div class="rating">';
+                            echo '<span class="icon icon-star"></span>';
+                            echo '<span class="icon icon-star"></span>';
+                            echo '<span class="icon icon-star"></span>';
+                        echo '</div>';
+                    } else if ( $category['title'] == 'Economy' ) {
+                        echo '<div class="rating">';
+                            echo '<span class="icon icon-star"></span>';
+                            echo '<span class="icon icon-star"></span>';
+                        echo '</div>';
+                    }
+                ?>
                 <div class="top-part mb-3">
                     <p class="category-title h2 mb-0 text-center text-wite"><?php echo $category['title'] ?></p>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/tyre-category-image.jpg" class="w-100" alt="<?php echo $category['title'] ?>" loading="lazy">

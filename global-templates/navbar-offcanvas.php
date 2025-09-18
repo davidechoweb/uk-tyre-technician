@@ -27,9 +27,12 @@ $theme_options = get_fields('option');
 
 		<div class="d-flex align-items-center">
 			<a href="#" class="login-link"><span class="icon icon-login"></span></a>
-			<div class="mini-basket ms-2">
+			<!-- <div class="mini-basket ms-2">
 				<span class="icon icon-basket ms-1"></span>
-			</div>
+			</div> -->
+			<div class="mini-basket ms-2">
+					<?php echo do_shortcode('[xoo_wsc_cart]'); ?>
+				</div>
 			<button
 				class="navbar-toggler ms-2"
 				type="button"

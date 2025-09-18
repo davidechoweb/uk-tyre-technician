@@ -39,9 +39,12 @@ $theme_options = get_fields('option');
 				<?php echo do_shortcode('[aws_search_form]'); ?>
 				<a class="my-account-btn echo-button--blue ms-3" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><?php echo is_user_logged_in() ? 'My Account' : 'Login/Register'; ?></a>
 				<!-- <a href="#" class="login-link ms-3"><span class="icon icon-login"></span></a> -->
-				<div class="mini-basket ms-3">
+				<!-- <a href="#" class="xoo-wsc-cart-trigger mini-basket ms-3">
 					<span class="mini-basket-label">BASKET / £0.00</span>
-					<span class="icon icon-basket ms-1"></span>
+					<span class="icon icon-basket ms-1"><?php echo esc_html( xoo_wsc_cart()->get_cart_count() ) ?></span>
+				</a> -->
+				<div class="mini-basket ms-3">
+					<?php echo do_shortcode('[xoo_wsc_cart]'); ?>
 				</div>
 			</div>
 		</div>

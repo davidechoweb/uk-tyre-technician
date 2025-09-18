@@ -14,74 +14,24 @@ get_header();
 
 <div class="wrapper" id="error-404-wrapper">
 
-	<div class="container" id="content" tabindex="-1">
+	<section class="echo-block">
 
-		<div class="row">
+		<div class="container" id="content" tabindex="-1">
 
-			<div class="col-md-12 content-area" id="primary">
+			<header class="page-header">
 
-				<main class="site-main" id="main">
+			<h1 class="h1 uk-text-bold"><?php esc_html_e( '404', 'understrap' ); ?></h1>
+			<p><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'understrap' ); ?></p>
 
-					<section class="error-404 not-found">
+			</header><!-- .page-header -->
 
-						<header class="page-header">
+			<div class="page-content">
+				<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'understrap' ); ?></p>
+			</div>
 
-							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'understrap' ); ?></h1>
+		</div><!-- #content -->
 
-						</header><!-- .page-header -->
-
-						<div class="page-content">
-
-							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'understrap' ); ?></p>
-
-							<?php get_search_form(); ?>
-
-							<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-							<?php if ( understrap_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-
-								<div class="widget widget_categories">
-
-									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'understrap' ); ?></h2>
-
-									<ul>
-										<?php
-										wp_list_categories(
-											array(
-												'orderby'  => 'count',
-												'order'    => 'DESC',
-												'show_count' => 1,
-												'title_li' => '',
-												'number'   => 10,
-											)
-										);
-										?>
-									</ul>
-
-								</div><!-- .widget -->
-
-							<?php endif; ?>
-
-							<?php
-
-							/* translators: %1$s: smiley */
-							$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'understrap' ), convert_smilies( ':)' ) ) . '</p>';
-							the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-							the_widget( 'WP_Widget_Tag_Cloud' );
-							?>
-
-						</div><!-- .page-content -->
-
-					</section><!-- .error-404 -->
-
-				</main>
-
-			</div><!-- #primary -->
-
-		</div><!-- .row -->
-
-	</div><!-- #content -->
+	</section>
 
 </div><!-- #error-404-wrapper -->
 
