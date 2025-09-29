@@ -80,23 +80,23 @@ add_action( 'init', function() {
 }, 1 );
 
 // Redirect first-time visitors to a landing page
-add_action( 'template_redirect', function() {
-    // ID of your landing page (replace 123 with your actual page ID)
-    $landing_page_id  = 24;
-    $landing_page_url = get_permalink( $landing_page_id );
+// add_action( 'template_redirect', function() {
+//     // ID of your landing page (replace 123 with your actual page ID)
+//     $landing_page_id  = 24;
+//     $landing_page_url = get_permalink( $landing_page_id );
 
-    // Safety: never run this in admin, login, or AJAX
-    if ( is_admin() || wp_doing_ajax() || is_user_logged_in() ) {
-        return;
-    }
+//     // Safety: never run this in admin, login, or AJAX
+//     if ( is_admin() || wp_doing_ajax() || is_user_logged_in() ) {
+//         return;
+//     }
 
-    // If first visit and not already on landing page → redirect
-    if ( empty( $_SESSION['visited'] ) ) {
-        $_SESSION['visited'] = true;
+//     // If first visit and not already on landing page → redirect
+//     if ( empty( $_SESSION['visited'] ) ) {
+//         $_SESSION['visited'] = true;
 
-        if ( ! is_page( $landing_page_id ) ) {
-            wp_redirect( $landing_page_url );
-            exit;
-        }
-    }
-});
+//         if ( ! is_page( $landing_page_id ) ) {
+//             wp_redirect( $landing_page_url );
+//             exit;
+//         }
+//     }
+// });
