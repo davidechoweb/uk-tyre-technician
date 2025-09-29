@@ -712,13 +712,24 @@ h5, .h5 {
 						&::before {
 							content: '';
 							position: absolute;
-							background-image: url(../images/ribbon-left.png);
-							background-position: center;
-							background-size: contain;
-							width: 50px;
-							height: 58px;
-							top: 15px;
-							left: -60px;
+							background: white;
+							height: 100%;
+							width: 100px;
+							left: -100px;
+							top: 0;
+
+							@media screen and (min-width:480px) {
+								content: '';
+								position: absolute;
+								background-color: transparent;
+								background-image: url(../images/ribbon-left.png);
+								background-position: center;
+								background-size: contain;
+								width: 50px;
+								height: 58px;
+								top: 15px;
+								left: -60px;
+							}
 
 							@include media-breakpoint-up(xxl) {
 								width: 68px;
@@ -731,13 +742,24 @@ h5, .h5 {
 						&::after {
 							content: '';
 							position: absolute;
-							background-image: url(../images/ribbon-right.png);
-							background-position: center;
-							background-size: contain;
-							width: 50px;
-							height: 58px;
-							top: 15px;
-							right: -60px;
+							background: white;
+							height: 100%;
+							width: 100px;
+							right: -100px;
+							top: 0;
+
+							@media screen and (min-width:480px) {
+								content: '';
+								position: absolute;
+								background-color: transparent;
+								background-image: url(../images/ribbon-right.png);
+								background-position: center;
+								background-size: contain;
+								width: 50px;
+								height: 58px;
+								top: 15px;
+								right: -60px;
+							}
 
 							@include media-breakpoint-up(xxl) {
 								width: 68px;
@@ -1147,7 +1169,7 @@ select.echo-form-field, select.wwlc_form_field {
 /*                                    */
 /**************************************/
 #header {
-	border-top: 10px solid $blue;
+	// border-top: 10px solid $blue;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1155,9 +1177,9 @@ select.echo-form-field, select.wwlc_form_field {
 	z-index: 9999;
 	background-color: #fff;
 	
-	@include media-breakpoint-up(xxl) {
-		border-top: 20px solid $blue;
-	}
+	// @include media-breakpoint-up(xxl) {
+	// 	border-top: 20px solid $blue;
+	// }
 
 	.header-top {
 		padding: 28px 0;
@@ -1392,10 +1414,10 @@ select.echo-form-field, select.wwlc_form_field {
 }
 
 main, #main-wc-page, .single-product #woocommerce-wrapper, #error-404-wrapper {
-	padding-top: 141.08px;
+	padding-top: 131.08px;
 
 	@include media-breakpoint-up(xl) {
-		padding-top: 220.56px;
+		padding-top: 200.56px;
 	}
 }
 
@@ -1410,15 +1432,15 @@ body.logged-in {
 
 	main, #main-wc-page {
 		@media screen and (min-width:1200px) {
-			padding-top: 198.56px;
+			padding-top: 188.56px;
 		}
 
 		@media screen and (min-width:1400px) {
-			padding-top: 208.56px;
+			padding-top: 188.56px;
 		}
 
 		@media screen and (min-width:1600px) {
-			padding-top: 220.56px;
+			padding-top: 200.56px;
 		}
 	}
 }
@@ -1434,11 +1456,17 @@ body.logged-in {
 }
 
 #footer {
-	background: url(../images/footer-bg.png) no-repeat top;
+	background: url(../images/footer-bg-mobile2.png) no-repeat top;
 	background-size: cover;
 	background-position: top;
-	padding: 140px 0 70px;
+	padding: 90px 0 70px;
 	margin-top: 40px;
+
+	@include media-breakpoint-up(md) {
+		background: url(../images/footer-bg.png) no-repeat top;
+		background-size: cover;
+		padding: 140px 0 70px;
+	}
 
 	@include media-breakpoint-up(xl) {
 		margin-top: 80px;
@@ -1759,9 +1787,15 @@ body.logged-in {
 
 	.echo-button {
 		@include fluid-type($min_width, $max_width, 16px, 18px);
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
 		width: 100%;
+	}
+
+	.add-to-cart-container {
+		.added_to_cart {
+			display: none;
+		}
 	}
 
 	.woocommerce-placeholder {
@@ -1874,6 +1908,12 @@ body.logged-in {
 /**************************************/
 .woocommerce {
 	div.product {
+		.entry-summary {
+			.added_to_cart {
+				display: none;
+			}
+		}
+
 		.woocommerce-tabs {
 			padding-top: 40px;
 
@@ -2040,6 +2080,23 @@ body.logged-in {
 			}
 		}
 	}
+
+	.woocommerce-notices-wrapper {
+		@media screen and (max-width:600px) {
+			.woocommerce-message {
+				flex-wrap: wrap;
+
+				&::before {
+					align-self: flex-start;
+				}
+			}
+
+			.button {
+				flex-basis: 100%;
+				margin: 15px 0 0;
+			}
+		}
+	}
 }
 
 /**************************************/
@@ -2094,7 +2151,7 @@ body.logged-in {
 			border: 0;
 
 			li {
-				margin: 0 8px;
+				margin: 0 3px;
 				border: 0;
 
 				a, span {
@@ -2290,6 +2347,16 @@ body.logged-in {
 	// 		background-color: #4e1d80!important;
 	// 	}
 	// }
+
+	.woocommerce-form__label-for-checkbox {
+		display: flex;
+		align-items: flex-start;
+
+		input {
+			margin-top: 15px;
+			margin-right: 15px;
+		}
+	}
 }
 
 // .faq-accordion {

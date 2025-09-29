@@ -769,3 +769,20 @@ function secure_payments_tab_content() {
 
 // hide term description on product archive page
 remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10 );
+
+// pagination: reduce number of pages on mobile
+add_filter( 'woocommerce_pagination_args', 'custom_mobile_pagination' );
+function custom_mobile_pagination( $args ) {
+    // Check if on mobile
+    if ( wp_is_mobile() ) {
+        // Reduce number of page links
+        $args['end_size'] = 0; // Number of pages at the ends
+        $args['mid_size'] = 0; // Number of pages around current
+    } else {
+        // Default (desktop)
+        $args['end_size'] = 2;
+        $args['mid_size'] = 2;
+    }
+
+    return $args;
+}

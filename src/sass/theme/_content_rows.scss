@@ -1,0 +1,14 @@
+.echo-block-content_rows {
+    .echo-button {
+        margin-right: 1rem;
+        margin-top: 1rem;
+    }
+
+    br {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
+}

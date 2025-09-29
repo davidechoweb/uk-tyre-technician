@@ -23,7 +23,7 @@
             &::before {
                 @include media-breakpoint-up(sm) {
                     content: '';
-                    background: url(../images/uk-map-icon.png) no-repeat center;
+                    background: url(../images/uk-map-icon.svg) no-repeat center;
                     background-size: contain;
                     position: absolute;
                     z-index: 1;

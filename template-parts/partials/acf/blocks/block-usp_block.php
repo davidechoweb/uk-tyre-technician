@@ -2,6 +2,7 @@
     $default = array(
         'usp' =>  get_sub_field('usp'),
         'image' =>  get_sub_field('image'),
+        'mobile_image' =>  get_sub_field('mobile_image'),
     );
     
     $args = wp_parse_args( $args, $default );
@@ -14,13 +15,17 @@
             <?php endforeach; ?>
         </ul>
     </div>
-    <?php
-        echo wp_get_attachment_image( $args['image']['ID'], '', false, [
-            'loading'  => 'eager',
-            'alt' => 'Background',
-            'class' => 'echo-object-fit-cover'
-        ]);
-    ?>
+    <picture>
+        <source 
+            srcset="<?php echo wp_get_attachment_image_url( $args['mobile_image']['ID'], 'full' ); ?>" 
+            media="(max-width: 767px)">
+        <img 
+            src="<?php echo wp_get_attachment_image_url( $args['image']['ID'], 'full' ); ?>" 
+            alt="<?php echo esc_attr( get_post_meta( $args['image']['ID'], '_wp_attachment_image_alt', true ) ); ?>" 
+            class="echo-object-fit-cover"
+            loading="lazy"
+        >
+    </picture>
 </div>
 
 <script>

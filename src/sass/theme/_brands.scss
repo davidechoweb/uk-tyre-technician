@@ -35,6 +35,12 @@
 
             .brands-slider {
                 .logo {
+                    padding: 0 15px;
+
+                    @include media-breakpoint-up(md) {
+                        padding: 0 30px;
+                    }
+
                     img {
                         height: 50px;
                         width: auto;

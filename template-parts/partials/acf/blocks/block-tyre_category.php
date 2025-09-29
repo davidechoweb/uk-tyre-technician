@@ -15,7 +15,7 @@
         <?php if ( $args['categories'] ) : ?>
         <div class="tyre-categories row">
             <?php foreach ( $args['categories'] as $key => $category ) : ?>
-            <div class="col-md-4 <?php echo ( $key != 0 ) ? 'mt-4 mt-md-0' : ''; ?>">
+            <div class="col-md-4 <?php echo ( $key != 0 ) ? 'mt-5 mt-md-0' : ''; ?>">
                 <?php
                     if ( $category['title'] == 'Premium' ) {
                         echo '<div class="rating">';
