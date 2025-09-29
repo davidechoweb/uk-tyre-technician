@@ -26,7 +26,7 @@ $theme_options = get_fields('option');
 		</a>
 
 		<div class="d-flex align-items-center">
-			<a href="#" class="login-link"><span class="icon icon-login"></span></a>
+			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="login-link"><span class="icon icon-login"></span></a>
 			<!-- <div class="mini-basket ms-2">
 				<span class="icon icon-basket ms-1"></span>
 			</div> -->

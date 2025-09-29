@@ -812,8 +812,15 @@ h5, .h5 {
 }
 
 .echo-block {
+	scroll-margin-top: 140px;
+
+	@include media-breakpoint-up(xl) {
+		scroll-margin-top: 220px;
+	}
+
 	> div {
 		padding: 40px 0;
+		
 
 		@include media-breakpoint-up(xl) {
 			padding: 80px 0;
@@ -971,6 +978,10 @@ select.echo-form-field, select.wwlc_form_field {
 			padding: 0;
 		}
 	}
+}
+
+.wpcf7-response-output {
+	text-align: center;
 }
 
 .wpcf7-acceptance {
@@ -1187,8 +1198,10 @@ select.echo-form-field, select.wwlc_form_field {
 						font-family: $kanit;
 						@include fluid-type($min_width, $max_width, 16px, 18px);
 
-						span {
+						a {
 							font-weight: 700;
+							text-decoration: none;
+							color: $copy-color;
 						}
 					}
 					.business-hours {
@@ -1200,6 +1213,11 @@ select.echo-form-field, select.wwlc_form_field {
 
 						span {
 							color: $blue;
+							margin-right: 10px;
+
+							&:last-of-type {
+								margin-right: 0;
+							}
 						}
 					}
 				}
@@ -1373,7 +1391,7 @@ select.echo-form-field, select.wwlc_form_field {
 	}
 }
 
-main, #main-wc-page {
+main, #main-wc-page, .single-product #woocommerce-wrapper, #error-404-wrapper {
 	padding-top: 141.08px;
 
 	@include media-breakpoint-up(xl) {
@@ -1403,6 +1421,10 @@ body.logged-in {
 			padding-top: 220.56px;
 		}
 	}
+}
+
+#landing-page {
+	padding-top: 0 !important;
 }
 
 .page-id-24 {
@@ -1676,6 +1698,14 @@ body.logged-in {
 	}
 }
 
+#main-wc-page {
+	.text-container {
+		@include media-breakpoint-up(md) {
+			max-width: 440px;
+		}
+	}
+}
+
 .product-card {
 	a {
 		position: relative;
@@ -1721,6 +1751,10 @@ body.logged-in {
 		color: $green;
 		font-family: $kanit;
 		font-weight: 500;
+
+		@media screen and (max-width:768px) {
+			margin-top: 0 !important;
+		}
 	}
 
 	.echo-button {
@@ -1736,6 +1770,12 @@ body.logged-in {
 }
 
 .product-filter-wrap {
+	margin-bottom: 40px;
+
+	@include media-breakpoint-up(md) {
+		margin-bottom: 0;
+	}
+
 	.filter-title {
 		text-align: center;
 		color: $blue;
@@ -1892,12 +1932,15 @@ body.logged-in {
 
 				li {
 					border: 0;
-					border-radius: 25px;
 					background: none;
 					flex: 1;
 					padding: 0;
 					display: flex !important;
 					align-items: center;
+
+					@include media-breakpoint-up(sm) {
+						border-radius: 25px;
+					}
 
 					&.active {
 						background-color: $blue;

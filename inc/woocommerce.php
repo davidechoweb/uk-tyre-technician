@@ -65,7 +65,7 @@ if ( ! function_exists( 'understrap_woocommerce_wrapper_start' ) ) {
 		if ( is_shop() || is_product_taxonomy() ) {
 			echo '<main class="col-md-8 site-main" id="product-archive">';
 		} else {
-			echo '<div class="mb-5"><a class="back-to-search" href="' . get_permalink( wc_get_page_id( 'shop' ) ) . '"><span>&#x276E;</span>Back to search</a></div>';
+			echo '<div class="mb-3 mb-xl-5"><a class="back-to-search" href="' . get_permalink( wc_get_page_id( 'shop' ) ) . '"><span>&#x276E;</span>Back to search</a></div>';
 			echo '<main class="col-md-12 site-main" id="product-archive">';
 		}
 	}
@@ -766,3 +766,6 @@ function secure_payments_tab_content() {
     $theme_options = get_fields('option');
 	echo $theme_options['secure_payments'];
 }
+
+// hide term description on product archive page
+remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10 );

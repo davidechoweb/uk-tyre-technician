@@ -30,7 +30,7 @@ $theme_options = get_fields('option');
 				<div class="header-left-content d-flex align-items-center">
 					<p class="logo-24-7 mb-0 ms-4"><img src="<?php echo get_template_directory_uri(); ?>/images/24-7.svg" alt="Tyre Management"><span class="ms-2">Tyre Management</span></p>
 					<div class="contact-details d-flex align-items-center ms-4">
-						<p class="phone-number mb-0">CALL <span><?php echo $theme_options['contact_details']['contact_number']; ?></span></p>
+						<p class="phone-number mb-0">CALL <a href="tel:<?php echo $theme_options['contact_details']['contact_number']; ?>"><?php echo $theme_options['contact_details']['contact_number']; ?></a></p>
 						<p class="business-hours mb-0 ms-4"><?php echo $theme_options['contact_details']['business_hours']; ?></p>
 					</div>
 				</div>

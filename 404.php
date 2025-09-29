@@ -14,9 +14,9 @@ get_header();
 
 <div class="wrapper" id="error-404-wrapper">
 
-	<section class="echo-block">
+	<section class="echo-block remove_bottom_spacing_1">
 
-		<div class="container" id="content" tabindex="-1">
+		<div class="container text-center" id="content" tabindex="-1">
 
 			<header class="page-header">
 
