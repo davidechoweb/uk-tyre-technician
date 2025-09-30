@@ -19,7 +19,7 @@ $theme_options = get_fields('option');
 	<div class="header-top">
 		<div class="container-fluid d-flex align-items-center justify-content-between">
 			<div class="header-left d-flex align-items-center">
-				<a href="<?php echo get_home_url(); ?>" class="header-logo">
+				<a href="<?php echo get_home_url(); ?>/home" class="header-logo">
 					<?php
 						echo wp_get_attachment_image( $theme_options['logo']['ID'], '', false, [
 							'loading'  => 'eager',

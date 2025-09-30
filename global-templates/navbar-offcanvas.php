@@ -16,7 +16,7 @@ $theme_options = get_fields('option');
 <nav id="mobile-header" class="d-block d-xl-none navbar p-0" aria-labelledby="main-nav-label">
 	<div class="mobile-header-top container-fluid">
 
-		<a href="<?php echo get_home_url(); ?>" class="header-logo">
+		<a href="<?php echo get_home_url(); ?>/home" class="header-logo">
 			<?php
 				echo wp_get_attachment_image( $theme_options['logo']['ID'], '', false, [
 					'loading'  => 'eager',
